@@ -1,0 +1,5 @@
+{
+  "file": "usdAecoExample/schema.usda",
+  "before": "aeco:example:driver",
+  "after": "aeco:other:driver"
+}

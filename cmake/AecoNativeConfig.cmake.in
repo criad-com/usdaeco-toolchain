@@ -1,0 +1,6 @@
+@PACKAGE_INIT@
+include(CMakeFindDependencyMacro)
+find_dependency(pxr CONFIG)
+@AECO_FIND_DEPENDENCIES@
+include("${CMAKE_CURRENT_LIST_DIR}/@AECO_TARGET_NAME@Targets.cmake")
+check_required_components(@AECO_TARGET_NAME@)

@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.24)
+project(nativeConsumer LANGUAGES CXX)
+find_package(usdAecoExampleNative CONFIG REQUIRED)
+add_executable(native-consumer main.cpp)
+target_link_libraries(native-consumer PRIVATE usdAecoExampleNative::usdAecoExampleNative)
+include(CTest)
+add_test(NAME installed-cmake-consumer COMMAND native-consumer)

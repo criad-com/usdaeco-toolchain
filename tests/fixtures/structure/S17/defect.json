@@ -1,0 +1,5 @@
+{
+  "file": "testenv/testUsdAecoExampleValidators.py",
+  "before": "def test_InvalidDriver(",
+  "after": "def missing_error_test("
+}

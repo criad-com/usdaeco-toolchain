@@ -1,0 +1,43 @@
+{
+  "repos": {
+    "aeco-toolchain": {
+      "repo": "aeco-toolchain",
+      "library": null,
+      "ref": "e190680d3f94eb76e06abe77574fda1308af2c85"
+    }
+  },
+  "fixtures": {
+    "core": {
+      "repo": "usdaeco-core",
+      "library": "usdAeco",
+      "ref": "v0.8.4",
+      "flakeInput": true,
+      "reason": "Legacy template build and runtime compatibility tests use the v0.8 schema and installed resource layout through USDAECO_CORE_DIR and CORE_PLUGIN_DIR; this is not a runtime dependency."
+    }
+  },
+  "observed": {
+    "python": "3.13.12",
+    "usd-core": "26.8",
+    "pillow": "12.3.0",
+    "structure_consumers": {
+      "usdaeco-core": "v0.9.3",
+      "usdaeco-axis": "v0.1.3",
+      "usdaeco-cctv": "v0.5.4",
+      "usdaeco-wall": "v0.2.3",
+      "usdaeco-pipe": "v0.2.3",
+      "usdaeco-scenarios": "v0.7.0"
+    },
+    "native": {
+      "openusd": "0.26.11-dev-g47154dc",
+      "python": "3.14.6",
+      "compiler": "AppleClang 16.0.0",
+      "method": "out-of-tree CMake against the pinned usd-dev",
+      "ctest": {
+        "schema": 1,
+        "plugin": 1,
+        "installed_consumer": 1
+      },
+      "relocated_runtime_checks": 4
+    }
+  }
+}

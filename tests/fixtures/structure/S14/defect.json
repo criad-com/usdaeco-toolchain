@@ -1,0 +1,5 @@
+{
+  "file": "usdAecoExampleValidators/plugInfo.json",
+  "before": "UsdAecoExampleValidators",
+  "after": "WrongKeyword"
+}

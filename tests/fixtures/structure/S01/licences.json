@@ -1,0 +1,23 @@
+[
+  {"id": "mit-default", "text": "MIT", "declared": "MIT", "readme": "MIT", "passes": true},
+  {"id": "apache-declared", "text": "Apache-2.0", "declared": "Apache-2.0", "readme": "Apache-2.0", "passes": true},
+  {"id": "bsd-declared", "text": "BSD-3-Clause", "declared": "BSD-3-Clause", "readme": "BSD-3-Clause", "passes": true},
+  {"id": "mit-inferred", "text": "MIT", "readme": "MIT", "passes": true},
+  {"id": "apache-inferred", "text": "Apache-2.0", "readme": "Apache-2.0", "passes": true},
+  {"id": "bsd-inferred", "text": "BSD-3-Clause", "readme": "BSD-3-Clause", "passes": true},
+  {"id": "mit-full-name", "text": "MIT", "declared": "MIT", "readme": "MIT License", "passes": true},
+  {"id": "apache-full-name", "text": "Apache-2.0", "declared": "Apache-2.0", "readme": "Apache License 2.0", "passes": true},
+  {"id": "bsd-full-name", "text": "BSD-3-Clause", "declared": "BSD-3-Clause", "readme": "BSD 3-Clause", "passes": true},
+  {"id": "apache-both-names", "text": "Apache-2.0", "readme": "Apache License 2.0 (Apache-2.0)", "passes": true},
+  {"id": "bsd-full-name-inferred", "text": "BSD-3-Clause", "readme": "BSD 3-Clause", "passes": true},
+  {"id": "full-name-mismatch", "text": "MIT", "readme": "Apache License 2.0", "passes": false},
+  {"id": "full-name-ambiguous", "text": "MIT", "readme": "MIT or Apache License 2.0", "passes": false},
+  {"id": "full-name-suffix", "text": "Apache-2.0", "readme": "Apache License 2.0-extra", "passes": false},
+  {"id": "full-name-prefix", "text": "BSD-3-Clause", "readme": "custom-BSD 3-Clause", "passes": false},
+  {"id": "manifest-needs-spdx", "text": "Apache-2.0", "declared": "Apache License 2.0", "readme": "Apache License 2.0", "passes": false},
+  {"id": "manifest-mismatch", "text": "MIT", "declared": "Apache-2.0", "readme": "MIT", "passes": false},
+  {"id": "readme-mismatch", "text": "MIT", "declared": "MIT", "readme": "Apache-2.0", "passes": false},
+  {"id": "missing", "text": null, "declared": "MIT", "readme": "MIT", "passes": false},
+  {"id": "unsupported-declaration", "text": "MIT", "declared": "GPL-3.0", "readme": "MIT", "passes": false},
+  {"id": "invalid-declaration", "text": "MIT", "declared": null, "readme": "MIT", "passes": false}
+]

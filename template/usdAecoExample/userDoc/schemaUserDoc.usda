@@ -1,0 +1,9 @@
+#usda 1.0
+(
+    subLayers = [@../schema.usda@]
+)
+over "AecoExampleAPI" (
+    customData = {
+        string userDocBrief = "A positive driving value and its derived result on an existing prim."
+    }
+) {}

@@ -1,0 +1,5 @@
+{
+  "file": "examples/datacentre/manifest.json",
+  "before": "demo-datacentre-01",
+  "after": "wrong-facility"
+}

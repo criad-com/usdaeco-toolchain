@@ -1,0 +1,5 @@
+{
+  "file": "usdAecoExampleValidators/validatorTokens.py",
+  "before": "usdAecoExampleValidators:DriverChecker",
+  "after": "usdAecoExampleValidators:AbsentChecker"
+}

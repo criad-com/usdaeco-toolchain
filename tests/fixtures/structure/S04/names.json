@@ -1,0 +1,17 @@
+[
+  {"repo": "usdaeco-core", "passes": true},
+  {"repo": "usdAeco", "passes": true},
+  {"repo": "usdAecoAxis", "passes": true},
+  {"repo": "usdSolid", "passes": true},
+  {"repo": "usdSolidOcct", "passes": true},
+  {"repo": "hdOcct", "passes": true},
+  {"repo": "aeco-toolchain", "passes": true},
+  {"repo": "OpenUSD", "passes": true},
+  {"repo": "legacy-kit", "passes": true},
+  {"repo": "UnknownKit", "passes": false},
+  {"repo": "usdSolidExtra", "passes": false},
+  {"repo": "OpenUSD-fork", "passes": false},
+  {"repo": "UsdSolid", "passes": false},
+  {"repo": "usdAeco_bad", "passes": false},
+  {"repo": "../usdSolid", "passes": false}
+]

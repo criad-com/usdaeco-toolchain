@@ -1,0 +1,10 @@
+{
+    "Plugins": [{
+        "Name": "usdAecoExampleHello",
+        "Type": "library",
+        "Root": "..",
+        "LibraryPath": "../@CMAKE_SHARED_LIBRARY_PREFIX@usdAecoExampleHello@CMAKE_SHARED_LIBRARY_SUFFIX@",
+        "ResourcePath": "resources",
+        "Info": {"Types": {"AecoExampleHello": {}}, "aeco": @AECO_METADATA@}
+    }]
+}

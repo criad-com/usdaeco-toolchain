@@ -1,0 +1,5 @@
+{
+  "file": "usdAecoExampleValidators/__init__.py",
+  "before": "_registry.RegisterPluginStageValidator(tokens.STAGE_CHECKER, stage_task)",
+  "after": ""
+}

@@ -1,0 +1,8 @@
+{
+  "name": "usdaeco-toolchain",
+  "version": "0.3.8",
+  "kind": "library",
+  "tier": "toolchain",
+  "requires": {},
+  "licence": "MIT"
+}

@@ -1,0 +1,5 @@
+{
+  "file": "usdAecoExample/generatedSchema.usda",
+  "before": "aeco:example:driver = 1",
+  "after": "aeco:example:driver = 9"
+}

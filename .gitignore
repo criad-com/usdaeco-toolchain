@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+build/
+dist/
+plugins/
+pluginset/
+/result
+/result-*
+# Local flake overrides can contain private dependency addresses.
+flake.lock
+
+out/
+!**/result/layers/**
+STEERING.md
+
+/examples/*/inputs/source

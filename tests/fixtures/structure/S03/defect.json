@@ -1,0 +1,5 @@
+{
+  "file": "library.json",
+  "before": ">=0.9,<1.0",
+  "after": "==0.9.0"
+}

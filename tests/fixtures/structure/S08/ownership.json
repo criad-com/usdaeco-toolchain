@@ -1,0 +1,23 @@
+[
+  {
+    "name": "declared_extras",
+    "metadata": {"namespaces": ["wall", "opening"], "classPrefixes": ["AecoWall", "AecoOpening"]},
+    "passing": ["S03", "S08", "S09"]
+  },
+  {
+    "name": "undeclared_extras",
+    "metadata": {},
+    "passing": ["S03"]
+  },
+  {
+    "name": "invalid_declarations",
+    "metadata": {"namespaces": ["wall", ""], "classPrefixes": ["AecoWall", ""]},
+    "passing": []
+  },
+  {
+    "name": "unused_namespace",
+    "metadata": {"namespaces": ["wall", "opening", "future"], "classPrefixes": ["AecoWall", "AecoOpening"]},
+    "passing": ["S03", "S08", "S09"],
+    "warning": "future"
+  }
+]

@@ -1,0 +1,176 @@
+{
+  "train": "aeco-2026.09-released",
+  "repos": [
+    {
+      "name": "usdaeco-core",
+      "kind": "library",
+      "library": "usdAeco",
+      "tag": "v0.9.1",
+      "requires": {},
+      "example": null,
+      "enclave": null
+    },
+    {
+      "name": "usdaeco-toolchain",
+      "kind": "library",
+      "library": null,
+      "tag": "v0.2.2",
+      "requires": {},
+      "example": null,
+      "enclave": null
+    },
+    {
+      "name": "usdaeco-buildup",
+      "kind": "library",
+      "library": "usdAecoBuildUp",
+      "tag": "v0.2.0",
+      "requires": {
+        "usdAeco": ">=0.9,<1.0"
+      },
+      "example": null,
+      "enclave": null
+    },
+    {
+      "name": "usdaeco-wall",
+      "kind": "usecase",
+      "library": "usdAecoWall",
+      "tag": "v0.1.2",
+      "requires": {
+        "usdAeco": ">=0.7",
+        "usdAecoBuildUp": ">=0.1"
+      },
+      "example": null,
+      "enclave": null
+    },
+    {
+      "name": "usdaeco-pipe",
+      "kind": "usecase",
+      "library": "usdAecoPipe",
+      "tag": "v0.1.2",
+      "requires": {
+        "usdAeco": ">=0.7"
+      },
+      "example": null,
+      "enclave": null
+    },
+    {
+      "name": "usdaeco-cctv",
+      "kind": "usecase",
+      "library": "usdAecoCctv",
+      "tag": "v0.5.0",
+      "requires": {
+        "usdAeco": ">=0.9,<1.0"
+      },
+      "example": null,
+      "enclave": null
+    },
+    {
+      "name": "usdaeco-cctv-exec",
+      "kind": "library",
+      "library": null,
+      "tag": "v0.2.0",
+      "requires": {
+        "usdAeco": ">=0.9,<1.0",
+        "usdAecoCctv": ">=0.5,<0.6"
+      },
+      "example": null,
+      "enclave": null
+    },
+    {
+      "name": "usdaeco-sync",
+      "kind": "library",
+      "library": "usdAecoSync",
+      "tag": "v0.5.0",
+      "requires": {
+        "usdAeco": ">=0.8.1,<0.9"
+      },
+      "example": null,
+      "enclave": null
+    },
+    {
+      "name": "usdaeco-datacentre",
+      "kind": "data",
+      "library": null,
+      "tag": "v0.4.2",
+      "requires": {
+        "usdaeco-revit": ">=0.1,<0.2"
+      },
+      "example": null,
+      "enclave": null
+    },
+    {
+      "name": "usdaeco-scenarios",
+      "kind": "gate",
+      "library": null,
+      "tag": "v0.3.7",
+      "requires": {},
+      "example": null,
+      "enclave": null
+    },
+    {
+      "name": "usdaeco-axis",
+      "kind": "library",
+      "library": "usdAecoAxis",
+      "tag": "v0.1.0",
+      "requires": {
+        "usdAeco": ">=0.9,<1.0"
+      },
+      "example": null,
+      "enclave": null
+    },
+    {
+      "name": "usdaeco-board",
+      "kind": "board",
+      "library": null,
+      "tag": "v0.1.1",
+      "requires": {},
+      "example": null,
+      "enclave": null
+    },
+    {
+      "name": "usdaeco-ifc",
+      "kind": "integration",
+      "library": null,
+      "tag": "v0.1.0",
+      "requires": {
+        "usdAeco": ">=0.8.1,<0.9",
+        "usdAecoSync": ">=0.5,<0.6"
+      },
+      "example": null,
+      "enclave": null
+    },
+    {
+      "name": "usdaeco-bonsai",
+      "kind": "integration",
+      "library": null,
+      "tag": "v0.1.0",
+      "requires": {
+        "usdAeco": ">=0.8.1,<0.9",
+        "usdAecoSync": ">=0.5,<0.6"
+      },
+      "example": null,
+      "enclave": null
+    },
+    {
+      "name": "usdaeco-revit",
+      "kind": "integration",
+      "library": null,
+      "tag": "v0.1.0",
+      "requires": {
+        "usdAeco": ">=0.8.1,<0.9",
+        "usdAecoSync": ">=0.5,<0.6"
+      },
+      "example": null,
+      "enclave": null
+    },
+    {
+      "name": "usdaeco-meta",
+      "kind": "meta",
+      "library": null,
+      "tag": null,
+      "requires": {},
+      "example": null,
+      "enclave": null
+    }
+  ]
+}

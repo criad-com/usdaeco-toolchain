@@ -1,0 +1,805 @@
+{
+  "format": 1,
+  "date": "2026-09-12",
+  "selected_train": "aeco-0.4.0",
+  "current_tag_reports": [
+    {
+      "repo": "usdaeco-core",
+      "tag": "v0.9.2",
+      "ok": true,
+      "files": 149,
+      "bytes": 2799718,
+      "findings": [],
+      "licences": [
+        {
+          "path": "LICENSE",
+          "licence": "MIT",
+          "sha256": "202a23a57b429d91028dc1b4f62b6342bad6bc3ee294d20c58f363fac184e346"
+        }
+      ],
+      "commit_count": 1,
+      "source_commit": "11000b2ca7a2f560bfcd1ffd439bf9b71a5f5c18",
+      "orphan_commit": "8ee0cf52c6dda0d5e1679e11288f62ee24639b51",
+      "inventory_sha256": "560d8a7cc0f173041c58e91f8bfbe95ea27c41c32e847a2bacb66e6e99bdb2ac",
+      "pushed": false
+    },
+    {
+      "repo": "usdaeco-axis",
+      "tag": "v0.1.1",
+      "ok": true,
+      "files": 43,
+      "bytes": 166281,
+      "findings": [],
+      "licences": [
+        {
+          "path": "LICENSE",
+          "licence": "Apache-2.0",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        }
+      ],
+      "commit_count": 1,
+      "source_commit": "a559e6a200703f852efb1d15ffa69a6453b863c0",
+      "orphan_commit": "fdec0df79ebf0d50b32edfbf5bcf8c5c453ba59e",
+      "inventory_sha256": "b20e6fc22bf6b92da0553159fea11ea837d23ca8ea5e761082b962f8f958c138",
+      "pushed": false
+    },
+    {
+      "repo": "usdaeco-toolchain",
+      "tag": "v0.3.3",
+      "ok": true,
+      "files": 184,
+      "bytes": 635416,
+      "findings": [],
+      "licences": [
+        {
+          "path": "LICENSE",
+          "licence": "MIT",
+          "sha256": "202a23a57b429d91028dc1b4f62b6342bad6bc3ee294d20c58f363fac184e346"
+        },
+        {
+          "path": "template/LICENSE",
+          "licence": "MIT",
+          "sha256": "202a23a57b429d91028dc1b4f62b6342bad6bc3ee294d20c58f363fac184e346"
+        }
+      ],
+      "commit_count": 1,
+      "source_commit": "c36dbe2fae3ababfd73a121b45f9b6334a9b15bd",
+      "orphan_commit": "0bc4ba12ca2caea3c222a1f719dbda8cc2c46f46",
+      "inventory_sha256": "39539e574a71fb4ff14b679212e4b64edb0bf68ca1e46b468345d2a4e7266baa",
+      "pushed": false
+    },
+    {
+      "repo": "usdaeco-buildup",
+      "tag": "v0.2.1",
+      "ok": true,
+      "files": 67,
+      "bytes": 285527,
+      "findings": [],
+      "licences": [
+        {
+          "path": "LICENSE",
+          "licence": "MIT",
+          "sha256": "202a23a57b429d91028dc1b4f62b6342bad6bc3ee294d20c58f363fac184e346"
+        }
+      ],
+      "commit_count": 1,
+      "source_commit": "0bf6190f060e278d4f3379b52903032e3dd9b60c",
+      "orphan_commit": "1b11ccff4615dc732483ffa81ba31b9482f9dfe5",
+      "inventory_sha256": "e4a1cdc2046b1555754c9427a2eceac94260aed8a529900fb9ec56fa2c289cb6",
+      "pushed": false
+    },
+    {
+      "repo": "usdaeco-wall",
+      "tag": "v0.2.1",
+      "ok": true,
+      "files": 64,
+      "bytes": 2892396,
+      "findings": [],
+      "licences": [
+        {
+          "path": "LICENSE",
+          "licence": "MIT",
+          "sha256": "202a23a57b429d91028dc1b4f62b6342bad6bc3ee294d20c58f363fac184e346"
+        }
+      ],
+      "commit_count": 1,
+      "source_commit": "d6dca4e4f4905ae32d56246a677777b6b42c9363",
+      "orphan_commit": "2ec131f449b039df8e4745da122e0d72e698e6e4",
+      "inventory_sha256": "2b209d24ca57d7f54b1d693f2327b52384ad76f2f1a74888ec8d1216147f2906",
+      "pushed": false
+    },
+    {
+      "repo": "usdaeco-pipe",
+      "tag": "v0.2.1",
+      "ok": true,
+      "files": 70,
+      "bytes": 6073877,
+      "findings": [],
+      "licences": [
+        {
+          "path": "LICENSE",
+          "licence": "MIT",
+          "sha256": "202a23a57b429d91028dc1b4f62b6342bad6bc3ee294d20c58f363fac184e346"
+        }
+      ],
+      "commit_count": 1,
+      "source_commit": "b07db9ecfab55754a7b2a959ab3cd0d1872032eb",
+      "orphan_commit": "40e82f5d67b3c50b42bf1a5bf44aeb95c66c6711",
+      "inventory_sha256": "bcd3b4b2376bdb82415c5dd9b29fc0c6e214f1040af1be839dbd39bcba873fe1",
+      "pushed": false
+    },
+    {
+      "repo": "usdaeco-cctv",
+      "tag": "v0.5.2",
+      "ok": true,
+      "files": 138,
+      "bytes": 10166722,
+      "findings": [],
+      "licences": [
+        {
+          "path": "LICENSE",
+          "licence": "MIT",
+          "sha256": "202a23a57b429d91028dc1b4f62b6342bad6bc3ee294d20c58f363fac184e346"
+        }
+      ],
+      "commit_count": 1,
+      "source_commit": "179318a090657af530d83552388e0c6fd9360631",
+      "orphan_commit": "daf50f93fdc6e85b4a097b8c8a920686347f520a",
+      "inventory_sha256": "ee8b7255296ffd0f84f29e51a3e968cce8b6a5e95ec826270ffe501e9de53eaa",
+      "pushed": false
+    },
+    {
+      "repo": "usdaeco-cctv-exec",
+      "tag": "v0.2.0",
+      "ok": true,
+      "files": 28,
+      "bytes": 128870,
+      "findings": [],
+      "licences": [
+        {
+          "path": "LICENSE",
+          "licence": "Apache-2.0",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        }
+      ],
+      "commit_count": 1,
+      "source_commit": "06fde32bd48c403da46f7c435fcfe469628adeb2",
+      "orphan_commit": "eb8da33d8fdfd8bd18abd7b73c731c84b69c3792",
+      "inventory_sha256": "6e71840f5f52c458f28683e4cff6f62344c369eec3c41de092f37b3ab2986186",
+      "pushed": false
+    },
+    {
+      "repo": "usdaeco-sync",
+      "tag": "v0.5.1",
+      "ok": true,
+      "files": 65,
+      "bytes": 433150,
+      "findings": [],
+      "licences": [
+        {
+          "path": "LICENSE",
+          "licence": "Apache-2.0",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        }
+      ],
+      "commit_count": 1,
+      "source_commit": "ee38f402a08b2c5f784bcc4cd5f826233216d091",
+      "orphan_commit": "c6110bb02c830f99fab4feff898e915646867458",
+      "inventory_sha256": "d2553aab2a4d1b7761cf63bb15b3e1cea6c63c134b9772ef369aeaf0880a2b36",
+      "pushed": false
+    },
+    {
+      "repo": "usdaeco-ifc",
+      "tag": "v0.2.0",
+      "ok": true,
+      "files": 106,
+      "bytes": 7011559,
+      "findings": [],
+      "licences": [
+        {
+          "path": "LICENSE",
+          "licence": "MIT",
+          "sha256": "202a23a57b429d91028dc1b4f62b6342bad6bc3ee294d20c58f363fac184e346"
+        }
+      ],
+      "commit_count": 1,
+      "source_commit": "bc910117cfde0d9434eb168b5fe66089eeda40f8",
+      "orphan_commit": "23300fa4a57d541a72629b867899f5e423b5ce25",
+      "inventory_sha256": "1bcd09d210d83d0c25700ecedbf208438402982846b35775c8391a86c24b178b",
+      "pushed": false
+    },
+    {
+      "repo": "usdaeco-bonsai",
+      "tag": "v0.1.2",
+      "ok": true,
+      "files": 75,
+      "bytes": 877816,
+      "findings": [],
+      "licences": [
+        {
+          "path": "LICENSE",
+          "licence": "MIT",
+          "sha256": "60e8f136d45a66bfebf67b95a7b276fa7b59a2f809f8efcd73b74523d1b8087f"
+        },
+        {
+          "path": "blender/LICENSE",
+          "licence": "Additional terms; inspect file",
+          "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+        }
+      ],
+      "commit_count": 1,
+      "source_commit": "8fe9c3d9fe107508c97026882c2a5a12336a1c5e",
+      "orphan_commit": "2807405b1626603370c581b573942a131d57cf7f",
+      "inventory_sha256": "a24d24aaf1e0e3e2425ad3bcea83593add943df0ea33dab7f0193f0ff480b534",
+      "pushed": false
+    },
+    {
+      "repo": "usdaeco-revit",
+      "tag": "v0.1.2",
+      "ok": true,
+      "files": 71,
+      "bytes": 534073,
+      "findings": [],
+      "licences": [
+        {
+          "path": "LICENSE",
+          "licence": "MIT",
+          "sha256": "202a23a57b429d91028dc1b4f62b6342bad6bc3ee294d20c58f363fac184e346"
+        }
+      ],
+      "commit_count": 1,
+      "source_commit": "67ca38f29d294268f542a9f07ef3802a31edede0",
+      "orphan_commit": "bc19c2ff108a41b432f88e11d3495db73aee849f",
+      "inventory_sha256": "8109b039fb2c2c49dd57905b0b6229db6281b1f35c8ea156e581278b81407b9b",
+      "pushed": false
+    },
+    {
+      "repo": "usdaeco-datacentre",
+      "tag": "v0.4.5",
+      "ok": true,
+      "files": 203,
+      "bytes": 12034456,
+      "findings": [],
+      "licences": [
+        {
+          "path": "LICENSE",
+          "licence": "MIT",
+          "sha256": "202a23a57b429d91028dc1b4f62b6342bad6bc3ee294d20c58f363fac184e346"
+        }
+      ],
+      "commit_count": 1,
+      "source_commit": "0b18702612ff2c268b18e3da0f3c7b62393320bb",
+      "orphan_commit": "f249917c056bd868fc38033ee9ab03ecb8ecb08c",
+      "inventory_sha256": "2746e9397d0801d35723e7a1b024bf43c5126be5ddff779336f39259b5ba0b94",
+      "pushed": false
+    },
+    {
+      "repo": "usdaeco-scenarios",
+      "tag": "v0.4.0",
+      "ok": true,
+      "files": 84,
+      "bytes": 1362424,
+      "findings": [],
+      "licences": [
+        {
+          "path": "LICENSE",
+          "licence": "Apache-2.0",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        }
+      ],
+      "commit_count": 1,
+      "source_commit": "67a337d0f5869b408b2bc4a5c202247bfbe1ff2e",
+      "orphan_commit": "1fa07f61f1869746b3fcfd2eb3b94c90bd931418",
+      "inventory_sha256": "580cb19c98835af7c87ab5923bcdac9fd91cf592ad67dba8a5ed8c3f43f7a238",
+      "pushed": false
+    },
+    {
+      "repo": "usdaeco-board",
+      "tag": "v0.1.2",
+      "ok": true,
+      "files": 34,
+      "bytes": 180030,
+      "findings": [],
+      "licences": [
+        {
+          "path": "LICENSE",
+          "licence": "MIT",
+          "sha256": "202a23a57b429d91028dc1b4f62b6342bad6bc3ee294d20c58f363fac184e346"
+        }
+      ],
+      "commit_count": 1,
+      "source_commit": "97435412bf84599a1e6bafd8e16b4bf454e4779b",
+      "orphan_commit": "16da1cde01c77bca1e992aa807cd7b36b731cda8",
+      "inventory_sha256": "175d6487e297a670f654f05cd595ba7adfc240ddef3ad628170272470449ef5d",
+      "pushed": false
+    },
+    {
+      "repo": "usdaeco-plan",
+      "tag": "v0.1.0",
+      "ok": true,
+      "files": 101,
+      "bytes": 7137738,
+      "findings": [],
+      "licences": [
+        {
+          "path": "LICENSE",
+          "licence": "MIT",
+          "sha256": "202a23a57b429d91028dc1b4f62b6342bad6bc3ee294d20c58f363fac184e346"
+        }
+      ],
+      "commit_count": 1,
+      "source_commit": "2c86660422448cc65d8018ba5b6f51d7e97d794c",
+      "orphan_commit": "c6dad5a3d70b9ac40d4af2e1bb881c8b3b8c2fbb",
+      "inventory_sha256": "67f6c3d6b479863ebee8deef61f5c4cc297c7d1a9b369f643112e71906181df1",
+      "pushed": false
+    },
+    {
+      "repo": "usdaeco-compliance",
+      "tag": "v0.1.0",
+      "ok": true,
+      "files": 61,
+      "bytes": 4095037,
+      "findings": [],
+      "licences": [
+        {
+          "path": "LICENSE",
+          "licence": "MIT",
+          "sha256": "202a23a57b429d91028dc1b4f62b6342bad6bc3ee294d20c58f363fac184e346"
+        }
+      ],
+      "commit_count": 1,
+      "source_commit": "f215b71cdeeeee1c95dbc81e751a84cb8bdcbd84",
+      "orphan_commit": "24bf44bcad175158f03308db62c6c8bffcc06ebe",
+      "inventory_sha256": "29f1aa09edad4ef05e1dd514496689fb9a77cda4c1e9067300952ee9d8ad0d57",
+      "pushed": false
+    },
+    {
+      "repo": "usdaeco-typical",
+      "tag": "v0.1.0",
+      "ok": true,
+      "files": 60,
+      "bytes": 1024546,
+      "findings": [],
+      "licences": [
+        {
+          "path": "LICENSE",
+          "licence": "MIT",
+          "sha256": "202a23a57b429d91028dc1b4f62b6342bad6bc3ee294d20c58f363fac184e346"
+        }
+      ],
+      "commit_count": 1,
+      "source_commit": "2c3b3809488075b73868345c0b58ac16ae65b903",
+      "orphan_commit": "ec7efef2e411d830e253ed096fdc8d5d022b6fd0",
+      "inventory_sha256": "58510ec79181fa185e06fd5b34a275b58f076cfe0cbf25ac01111869627f274a",
+      "pushed": false
+    },
+    {
+      "repo": "usdaeco-clash",
+      "tag": "v0.2.0",
+      "ok": true,
+      "files": 68,
+      "bytes": 3411026,
+      "findings": [],
+      "licences": [
+        {
+          "path": "LICENSE",
+          "licence": "MIT",
+          "sha256": "202a23a57b429d91028dc1b4f62b6342bad6bc3ee294d20c58f363fac184e346"
+        }
+      ],
+      "commit_count": 1,
+      "source_commit": "343d2c99ea9b92c0e4a62f9a9a5c2562c427620b",
+      "orphan_commit": "97dd020186fded6f4956712b25ece768ab5aceed",
+      "inventory_sha256": "a7edd4f6852855f3d585260d2b4f861a85d8cc3246a62c5912bb5800ccdc2e8e",
+      "pushed": false
+    },
+    {
+      "repo": "usdaeco-solid",
+      "tag": "v0.1.0",
+      "ok": true,
+      "files": 54,
+      "bytes": 7574059,
+      "findings": [],
+      "licences": [
+        {
+          "path": "LICENSE",
+          "licence": "MIT",
+          "sha256": "202a23a57b429d91028dc1b4f62b6342bad6bc3ee294d20c58f363fac184e346"
+        }
+      ],
+      "commit_count": 1,
+      "source_commit": "c0380e2054ab9d2ca472d1be3bae6b7a77924030",
+      "orphan_commit": "e0a1f84fcebba67b5d8e60951595e6f61de37b56",
+      "inventory_sha256": "f200ec6609150bce11a15b94ab0133f6ec9c30afb0727446cc42ae05b456f25a",
+      "pushed": false
+    }
+  ],
+  "selected_train_reports": [
+    {
+      "repo": "usdaeco-core",
+      "tag": "v0.9.1",
+      "status": "PASS",
+      "files": 75,
+      "bytes": 355279,
+      "findings": [],
+      "licences": [
+        {
+          "path": "LICENSE",
+          "licence": "Apache-2.0",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        }
+      ],
+      "commit_count": 1
+    },
+    {
+      "repo": "usdaeco-axis",
+      "tag": "v0.1.0",
+      "status": "PASS",
+      "files": 39,
+      "bytes": 145423,
+      "findings": [],
+      "licences": [
+        {
+          "path": "LICENSE",
+          "licence": "Apache-2.0",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        }
+      ],
+      "commit_count": 1
+    },
+    {
+      "repo": "usdaeco-toolchain",
+      "tag": "v0.2.3",
+      "status": "FAIL",
+      "files": 136,
+      "bytes": 422994,
+      "findings": [
+        {
+          "path": "nix/registry.json",
+          "line": 12,
+          "rule": "PrivateText"
+        },
+        {
+          "path": "nix/registry.json",
+          "line": 23,
+          "rule": "PrivateText"
+        },
+        {
+          "path": "nix/registry.json",
+          "line": 34,
+          "rule": "PrivateText"
+        },
+        {
+          "path": "nix/registry.json",
+          "line": 45,
+          "rule": "PrivateText"
+        },
+        {
+          "path": "nix/registry.json",
+          "line": 56,
+          "rule": "PrivateText"
+        },
+        {
+          "path": "nix/registry.json",
+          "line": 67,
+          "rule": "PrivateText"
+        },
+        {
+          "path": "nix/registry.json",
+          "line": 78,
+          "rule": "PrivateText"
+        },
+        {
+          "path": "nix/registry.json",
+          "line": 89,
+          "rule": "PrivateText"
+        },
+        {
+          "path": "nix/registry.json",
+          "line": 100,
+          "rule": "PrivateText"
+        },
+        {
+          "path": "nix/registry.json",
+          "line": 111,
+          "rule": "PrivateText"
+        },
+        {
+          "path": "nix/registry.json",
+          "line": 122,
+          "rule": "PrivateText"
+        },
+        {
+          "path": "nix/registry.json",
+          "line": 133,
+          "rule": "PrivateText"
+        },
+        {
+          "path": "nix/registry.json",
+          "line": 144,
+          "rule": "PrivateText"
+        },
+        {
+          "path": "nix/registry.json",
+          "line": 155,
+          "rule": "PrivateText"
+        },
+        {
+          "path": "nix/registry.json",
+          "line": 166,
+          "rule": "PrivateText"
+        },
+        {
+          "path": "nix/registry.json",
+          "line": 177,
+          "rule": "PrivateText"
+        },
+        {
+          "path": "nix/registry.json",
+          "line": 188,
+          "rule": "PrivateText"
+        },
+        {
+          "path": "nix/registry.json",
+          "line": 199,
+          "rule": "PrivateText"
+        },
+        {
+          "path": "nix/registry.json",
+          "line": 210,
+          "rule": "PrivateText"
+        },
+        {
+          "path": "nix/registry.json",
+          "line": 221,
+          "rule": "PrivateText"
+        },
+        {
+          "path": "nix/registry.json",
+          "line": 232,
+          "rule": "PrivateText"
+        },
+        {
+          "path": "LICENSE",
+          "rule": "LicenceMismatch"
+        }
+      ],
+      "licences": [
+        {
+          "path": "LICENSE",
+          "licence": "Apache-2.0",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "path": "template/LICENSE",
+          "licence": "Apache-2.0",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        }
+      ],
+      "commit_count": 0
+    },
+    {
+      "repo": "usdaeco-buildup",
+      "tag": "v0.2.0",
+      "status": "PASS",
+      "files": 50,
+      "bytes": 146039,
+      "findings": [],
+      "licences": [
+        {
+          "path": "LICENSE",
+          "licence": "Apache-2.0",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        }
+      ],
+      "commit_count": 1
+    },
+    {
+      "repo": "usdaeco-wall",
+      "tag": "v0.2.0",
+      "status": "PASS",
+      "files": 56,
+      "bytes": 344398,
+      "findings": [],
+      "licences": [
+        {
+          "path": "LICENSE",
+          "licence": "Apache-2.0",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        }
+      ],
+      "commit_count": 1
+    },
+    {
+      "repo": "usdaeco-pipe",
+      "tag": "v0.2.0",
+      "status": "PASS",
+      "files": 56,
+      "bytes": 450196,
+      "findings": [],
+      "licences": [
+        {
+          "path": "LICENSE",
+          "licence": "Apache-2.0",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        }
+      ],
+      "commit_count": 1
+    },
+    {
+      "repo": "usdaeco-cctv",
+      "tag": "v0.5.0",
+      "status": "PASS",
+      "files": 114,
+      "bytes": 2119887,
+      "findings": [],
+      "licences": [
+        {
+          "path": "LICENSE",
+          "licence": "Apache-2.0",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        }
+      ],
+      "commit_count": 1
+    },
+    {
+      "repo": "usdaeco-cctv-exec",
+      "tag": "v0.2.0",
+      "status": "PASS",
+      "files": 28,
+      "bytes": 128870,
+      "findings": [],
+      "licences": [
+        {
+          "path": "LICENSE",
+          "licence": "Apache-2.0",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        }
+      ],
+      "commit_count": 1
+    },
+    {
+      "repo": "usdaeco-sync",
+      "tag": "v0.5.1",
+      "status": "PASS",
+      "files": 65,
+      "bytes": 433150,
+      "findings": [],
+      "licences": [
+        {
+          "path": "LICENSE",
+          "licence": "Apache-2.0",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        }
+      ],
+      "commit_count": 1
+    },
+    {
+      "repo": "usdaeco-ifc",
+      "tag": "v0.1.1",
+      "status": "PASS",
+      "files": 80,
+      "bytes": 494653,
+      "findings": [],
+      "licences": [
+        {
+          "path": "LICENSE",
+          "licence": "Apache-2.0",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        }
+      ],
+      "commit_count": 1
+    },
+    {
+      "repo": "usdaeco-bonsai",
+      "tag": "v0.1.1",
+      "status": "PASS",
+      "files": 50,
+      "bytes": 419299,
+      "findings": [],
+      "licences": [
+        {
+          "path": "LICENSE",
+          "licence": "Apache-2.0",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        }
+      ],
+      "commit_count": 1
+    },
+    {
+      "repo": "usdaeco-revit",
+      "tag": "v0.1.1",
+      "status": "PASS",
+      "files": 60,
+      "bytes": 455382,
+      "findings": [],
+      "licences": [
+        {
+          "path": "LICENSE",
+          "licence": "Apache-2.0",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        }
+      ],
+      "commit_count": 1
+    },
+    {
+      "repo": "usdaeco-datacentre",
+      "tag": "v0.4.2",
+      "status": "PASS",
+      "files": 173,
+      "bytes": 11009373,
+      "findings": [],
+      "licences": [
+        {
+          "path": "LICENSE",
+          "licence": "Apache-2.0",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        }
+      ],
+      "commit_count": 1
+    },
+    {
+      "repo": "usdaeco-board",
+      "tag": "v0.1.1",
+      "status": "PASS",
+      "files": 27,
+      "bytes": 145732,
+      "findings": [],
+      "licences": [
+        {
+          "path": "LICENSE",
+          "licence": "Apache-2.0",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        }
+      ],
+      "commit_count": 1
+    },
+    {
+      "repo": "usdaeco-scenarios",
+      "tag": "v0.3.7",
+      "status": "FAIL",
+      "reason": "ValueError: git show failed (exit 128)"
+    },
+    {
+      "repo": "usdaeco-meta",
+      "tag": null,
+      "status": "EXCLUDED",
+      "reason": "Private metadata repository"
+    },
+    {
+      "repo": "usdaeco-plan",
+      "tag": null,
+      "status": "NOT RUN",
+      "reason": "No tag in selected train"
+    },
+    {
+      "repo": "usdaeco-compliance",
+      "tag": null,
+      "status": "NOT RUN",
+      "reason": "No tag in selected train"
+    },
+    {
+      "repo": "usdaeco-typical",
+      "tag": null,
+      "status": "NOT RUN",
+      "reason": "No tag in selected train"
+    },
+    {
+      "repo": "usdaeco-clash",
+      "tag": null,
+      "status": "NOT RUN",
+      "reason": "No tag in selected train"
+    },
+    {
+      "repo": "usdaeco-solid",
+      "tag": null,
+      "status": "NOT RUN",
+      "reason": "No tag in selected train"
+    }
+  ],
+  "image_metadata": {
+    "images": 102,
+    "findings": []
+  },
+  "note": "Current tags are a separately recorded report set; they do not replace the selected train."
+}

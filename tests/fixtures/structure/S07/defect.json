@@ -1,0 +1,5 @@
+{
+  "file": "usdAecoExample/schema.usda",
+  "before": "bool useLiteralIdentifier = true",
+  "after": "bool useLiteralIdentifier = false"
+}

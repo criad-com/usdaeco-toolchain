@@ -1,0 +1,8 @@
+#usda 1.0
+class "AecoExampleAPI" (
+    prepend apiSchemas = ["CollectionAPI:members"]
+)
+{
+    uniform token collection:members:expansionRule = "explicitOnly"
+    double foreign:driver = 1
+}

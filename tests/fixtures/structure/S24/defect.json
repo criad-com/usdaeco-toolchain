@@ -1,0 +1,5 @@
+{
+  "file": "usdAecoExample/examples/minimal.usda",
+  "before": "def Xform \"Example\"",
+  "after": "def AecoMissing \"Example\""
+}

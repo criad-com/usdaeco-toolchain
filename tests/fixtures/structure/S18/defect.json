@@ -1,0 +1,5 @@
+{
+  "file": "pyproject.toml",
+  "before": "usdaeco_example.cli:main",
+  "after": "missing.cli:main"
+}

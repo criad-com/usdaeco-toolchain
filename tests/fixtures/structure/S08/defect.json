@@ -1,0 +1,5 @@
+{
+  "file": "usdAecoExample/schema.usda",
+  "before": "class \"AecoExampleAPI\"",
+  "after": "class \"WrongAPI\""
+}

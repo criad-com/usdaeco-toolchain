@@ -1,0 +1,86 @@
+{
+  "actual_findings_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+  "datacentre": {
+    "ref": "v0.4.6",
+    "variant": "base"
+  },
+  "facility": "demo-datacentre-01",
+  "findings_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+  "pins": {
+    "core": {
+      "library": "usdAeco",
+      "ref": "v0.9.3",
+      "repo": "usdaeco-core"
+    },
+    "datacentre": {
+      "library": null,
+      "ref": "v0.4.6",
+      "repo": "usdaeco-datacentre"
+    },
+    "toolchain": {
+      "library": null,
+      "ref": "v0.3.8",
+      "repo": "usdaeco-toolchain"
+    }
+  },
+  "renders": [
+    {
+      "bytes": 76457,
+      "height": 800,
+      "path": "renders/overview.png",
+      "sha256": "f8ce5e5cb86ae1a5d5be51f56315b2c41bd1bd95b6266bcbd8075ae3623c3d21",
+      "width": 1280
+    }
+  ],
+  "result": {
+    "bytes": 78991,
+    "files": [
+      {
+        "bytes": 587,
+        "path": "result/README.md",
+        "sha256": "a3b98c520e9c09d6d8383054b77dab3a1ca01c563156cf948fe3ddabbd764952"
+      },
+      {
+        "bytes": 1393,
+        "normalized_sha256": "34fe1f19666efca78739b171fcae1bc42674508ab7fb914e56a6a243cbd4415e",
+        "path": "result/example.usdc",
+        "sha256": "fff00ddc1340658220fc9f6c79bef686e52c346d0cd0459a52e80c17bc08f9fd"
+      },
+      {
+        "bytes": 354,
+        "path": "result/layers/inputs/cameras.usda",
+        "sha256": "f969fc663d10085c3c0925be9371dd6abf627f41b8e1b9861a5fc7ce1e3fba81"
+      },
+      {
+        "bytes": 67,
+        "path": "result/layers/out/derived.usda",
+        "sha256": "ce5b659343466b64f6bc34e3e5987d13f10601810be61a67060986a197714ead"
+      },
+      {
+        "bytes": 76590,
+        "path": "result/vanilla.png",
+        "sha256": "84fa93f496d718d4ea56db01a02b41ad5b750843d083a5b80444a9c7ff40316c"
+      }
+    ],
+    "normalization": "sdf-usda-v1",
+    "prim_count": 4,
+    "vanilla": {
+      "bytes": 76590,
+      "height": 800,
+      "path": "result/vanilla.png",
+      "sha256": "84fa93f496d718d4ea56db01a02b41ad5b750843d083a5b80444a9c7ff40316c",
+      "width": 1280
+    }
+  },
+  "source": {
+    "layers": [
+      {
+        "bytes": 306,
+        "path": "minimal.usda",
+        "sha256": "bf9d4c7ab500cad4659c75b3dc4229378371eb8c39a47584a84df4f84837d5f6"
+      }
+    ],
+    "mode": "minimal",
+    "sha256": "bf9d4c7ab500cad4659c75b3dc4229378371eb8c39a47584a84df4f84837d5f6"
+  }
+}

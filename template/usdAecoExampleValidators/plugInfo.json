@@ -1,0 +1,25 @@
+{
+  "Plugins": [
+    {
+      "Type": "python",
+      "Name": "usdAecoExampleValidators",
+      "Root": ".",
+      "Info": {
+        "Validators": {
+          "keywords": [
+            "UsdAecoExampleValidators"
+          ],
+          "DriverChecker": {
+            "doc": "Check that the example driving value is positive.",
+            "schemaTypes": [
+              "UsdAecoExampleExampleAPI"
+            ]
+          },
+          "StageChecker": {
+            "doc": "Check that the example stage has a default prim."
+          }
+        }
+      }
+    }
+  ]
+}

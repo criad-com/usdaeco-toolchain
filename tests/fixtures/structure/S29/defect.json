@@ -1,0 +1,5 @@
+{
+  "file": "examples/datacentre/result/layers/out/derived.usda",
+  "before": "#usda 1.0",
+  "after": "#usda 1.0\n( subLayers = [@../../../../source/dc.usda@] )"
+}

@@ -1,0 +1,5 @@
+{
+  "file": "check.py",
+  "before": "check_structure",
+  "after": "omitted_structure"
+}

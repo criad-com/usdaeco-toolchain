@@ -1,0 +1,5 @@
+{
+  "file": "usdAecoExample/plugInfo.json",
+  "before": "\"Type\": \"resource\"",
+  "after": "\"Type\": \"library\""
+}

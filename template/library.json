@@ -1,0 +1,11 @@
+{
+  "name": "usdAecoExample",
+  "version": "0.1.0",
+  "kind": "usecase",
+  "tier": "kind",
+  "_comment": "Optional namespaces and classPrefixes arrays declare all owned names; see README.md. Omitted arrays default to the library suffix and Aeco<X>.",
+  "requires": {
+    "usdAeco": ">=0.9,<1.0"
+  },
+  "licence": "MIT"
+}

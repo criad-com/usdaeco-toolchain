@@ -1,0 +1,772 @@
+{
+  "format": 1,
+  "family": {
+    "train": "aeco-0.4.0",
+    "repos": [
+      {
+        "name": "usdaeco-core",
+        "kind": "library",
+        "library": "usdAeco",
+        "tag": "v0.9.1",
+        "requires": {},
+        "example": null,
+        "enclave": null
+      },
+      {
+        "name": "usdaeco-axis",
+        "kind": "library",
+        "library": "usdAecoAxis",
+        "tag": "v0.1.0",
+        "requires": {
+          "usdAeco": ">=0.9,<1.0"
+        },
+        "example": null,
+        "enclave": null
+      },
+      {
+        "name": "usdaeco-toolchain",
+        "kind": "library",
+        "library": null,
+        "tag": "v0.2.3",
+        "requires": {},
+        "example": null,
+        "enclave": null
+      },
+      {
+        "name": "usdaeco-buildup",
+        "kind": "library",
+        "library": "usdAecoBuildUp",
+        "tag": "v0.2.0",
+        "requires": {
+          "usdAeco": ">=0.9,<1.0"
+        },
+        "example": null,
+        "enclave": null
+      },
+      {
+        "name": "usdaeco-wall",
+        "kind": "usecase",
+        "library": "usdAecoWall",
+        "tag": "v0.2.0",
+        "requires": {
+          "usdAeco": ">=0.9,<1.0",
+          "usdAecoAxis": ">=0.1,<0.2",
+          "usdAecoBuildUp": ">=0.1,<0.3"
+        },
+        "example": null,
+        "enclave": null
+      },
+      {
+        "name": "usdaeco-pipe",
+        "kind": "usecase",
+        "library": "usdAecoPipe",
+        "tag": "v0.2.0",
+        "requires": {
+          "usdAeco": ">=0.9,<1.0",
+          "usdAecoAxis": ">=0.1,<0.2"
+        },
+        "example": null,
+        "enclave": null
+      },
+      {
+        "name": "usdaeco-cctv",
+        "kind": "usecase",
+        "library": "usdAecoCctv",
+        "tag": "v0.5.0",
+        "requires": {
+          "usdAeco": ">=0.9,<1.0"
+        },
+        "example": null,
+        "enclave": null
+      },
+      {
+        "name": "usdaeco-cctv-exec",
+        "kind": "library",
+        "library": null,
+        "tag": "v0.2.0",
+        "requires": {
+          "usdAeco": ">=0.9,<1.0",
+          "usdAecoCctv": ">=0.5,<0.6"
+        },
+        "example": null,
+        "enclave": null
+      },
+      {
+        "name": "usdaeco-sync",
+        "kind": "library",
+        "library": "usdAecoSync",
+        "tag": "v0.5.1",
+        "requires": {
+          "usdAeco": ">=0.9,<1.0",
+          "usdAecoAxis": ">=0.1,<0.2"
+        },
+        "example": null,
+        "enclave": null
+      },
+      {
+        "name": "usdaeco-ifc",
+        "kind": "integration",
+        "library": null,
+        "tag": "v0.1.1",
+        "requires": {
+          "usdAeco": ">=0.9,<1.0",
+          "usdAecoSync": ">=0.5,<0.6",
+          "usdAecoAxis": ">=0.1,<0.2"
+        },
+        "example": null,
+        "enclave": null
+      },
+      {
+        "name": "usdaeco-bonsai",
+        "kind": "integration",
+        "library": null,
+        "tag": "v0.1.1",
+        "requires": {
+          "usdAeco": ">=0.9,<1.0",
+          "usdAecoSync": ">=0.5,<0.6",
+          "usdAecoAxis": ">=0.1,<0.2"
+        },
+        "example": null,
+        "enclave": null
+      },
+      {
+        "name": "usdaeco-revit",
+        "kind": "integration",
+        "library": null,
+        "tag": "v0.1.1",
+        "requires": {
+          "usdAeco": ">=0.9,<1.0",
+          "usdAecoSync": ">=0.5,<0.6",
+          "usdAecoAxis": ">=0.1,<0.2"
+        },
+        "example": null,
+        "enclave": "tools/usdaeco_revit/scripts"
+      },
+      {
+        "name": "usdaeco-datacentre",
+        "kind": "data",
+        "library": null,
+        "tag": "v0.4.2",
+        "requires": {
+          "usdaeco-revit": ">=0.1,<0.2"
+        },
+        "example": null,
+        "enclave": null
+      },
+      {
+        "name": "usdaeco-board",
+        "kind": "board",
+        "library": null,
+        "tag": "v0.1.1",
+        "requires": {},
+        "example": null,
+        "enclave": null
+      },
+      {
+        "name": "usdaeco-scenarios",
+        "kind": "gate",
+        "library": null,
+        "tag": "v0.3.7",
+        "requires": {},
+        "example": null,
+        "enclave": null
+      },
+      {
+        "name": "usdaeco-meta",
+        "kind": "meta",
+        "library": null,
+        "tag": null,
+        "requires": {},
+        "example": null,
+        "enclave": null
+      },
+      {
+        "name": "usdaeco-plan",
+        "kind": "usecase",
+        "library": "usdAecoPlan",
+        "tag": null,
+        "requires": {
+          "usdAeco": ">=0.9,<1.0"
+        },
+        "example": null,
+        "enclave": null
+      },
+      {
+        "name": "usdaeco-compliance",
+        "kind": "usecase",
+        "library": "usdAecoCompliance",
+        "tag": null,
+        "requires": {
+          "usdAeco": ">=0.9,<1.0"
+        },
+        "example": null,
+        "enclave": null
+      },
+      {
+        "name": "usdaeco-typical",
+        "kind": "usecase",
+        "library": "usdAecoTypical",
+        "tag": null,
+        "requires": {
+          "usdAeco": ">=0.9,<1.0"
+        },
+        "example": null,
+        "enclave": null
+      },
+      {
+        "name": "usdaeco-clash",
+        "kind": "usecase",
+        "library": "usdAecoClash",
+        "tag": null,
+        "requires": {
+          "usdAeco": ">=0.9,<1.0"
+        },
+        "example": null,
+        "enclave": null
+      },
+      {
+        "name": "usdaeco-solid",
+        "kind": "usecase",
+        "library": null,
+        "tag": null,
+        "requires": {
+          "usdAeco": ">=0.9,<1.0"
+        },
+        "example": null,
+        "enclave": null
+      }
+    ]
+  },
+  "cards": [
+    {
+      "name": "usdaeco-core",
+      "available": true,
+      "commit": "ee20aa7e20590d9893d4fbf67a39fb3a0ea782d0",
+      "library": {
+        "name": "usdAeco",
+        "version": "0.9.1",
+        "kind": "library",
+        "tier": "core",
+        "requires": {}
+      },
+      "purpose": "a small semantic core for the built environment on OpenUSD",
+      "status": "Version 0.9.1 is a documentation and hygiene release. Schema edits change doc strings only: the 8/2/5 class registry, property names and defaults are unchanged from 0.9.0. Verified: **61 checks, 0 failed; 21 tests and 78 subtests passed**. Structure lint passes all 26 rules, including S25. Core validates representation marks and composition; geometric accuracy is outside its guarantees. Nix acceptance is not proven: the single offline check attempt could not resolve the public build dependency (404).",
+      "example": "examples/README.md",
+      "licence": "Apache-2.0",
+      "source_sha256": {
+        "library.json": "b7beaa43abfdba4e05bc16a9e3a6d26274c06c15e103bcada2521924a7b2f67f",
+        "README.md": "eb4822cebaaef45af4e3a52f71dd1d9e41399c6b3667f71596186b22bae7d5fa",
+        "LICENSE": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+      }
+    },
+    {
+      "name": "usdaeco-axis",
+      "available": true,
+      "commit": "627dbb5e19ca9070dd123432f2acb46b3ad38f51",
+      "library": {
+        "name": "usdAecoAxis",
+        "version": "0.1.0",
+        "kind": "library",
+        "tier": "section",
+        "requires": {
+          "usdAeco": ">=0.9,<1.0"
+        }
+      },
+      "purpose": "shared path drivers and derived guide curves",
+      "status": "Version 0.1.0; extracted unchanged from the core v0.8.4 schema, built against core v0.9.0. [Verification](verification.md) records exact checked dependencies, the schema and test results, rendered output and the Nix limitation.",
+      "example": "examples/README.md",
+      "licence": "Apache-2.0",
+      "source_sha256": {
+        "library.json": "8cf4e767f5e4e9f73c25e917dddfc948ce2f9d1734b7a94826c3abe31aadc4d5",
+        "README.md": "09250ded408707617a1c0feeda0ee3400d871a74e09beef20e4948a127cd16e2",
+        "docs/usecase.md": "d0b4fce26f957984168538235e967972a023829c2ab5221847dd4d6e6503cf8a",
+        "LICENSE": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+      }
+    },
+    {
+      "name": "usdaeco-toolchain",
+      "available": true,
+      "commit": "638a0af02ed6492dd2201856d7fddc672272a43f",
+      "library": {
+        "name": "usdaeco-toolchain",
+        "version": "0.2.3",
+        "kind": "library",
+        "tier": "toolchain",
+        "requires": {}
+      },
+      "purpose": "the shared schema, validation and example kit",
+      "status": "Version 0.2.3: **56 checks, 0 failed; 221 tests passed**. Adds optional `namespaces` and `classPrefixes` ownership lists in library.json. Defaults remain unchanged; undeclared extras fail and unused namespaces produce warning details. See [conventions](docs/repo-conventions.md) for the declaration and [verification](docs/verification.md) for measured gates and consumer results. The full gate includes the Pillow-enabled GIF path and guide-purpose regression. See [verification](docs/verification.md) for measured counts, compiler dependencies, the Nix result and remaining limitations. Pixel hashes record actual renders; cross-platform identical Embree pixels are not promised. The Python UsdValidation API is supported directly; no shim is used. Source usdchecker invocations must run from the repository root so its Python plugin can be imported. The supported Python run helper adds registered source module parents to sys.path automatically.",
+      "example": "template/examples/datacentre/README.md",
+      "licence": "Apache-2.0",
+      "source_sha256": {
+        "library.json": "ece33bd171f9b5d4e6bc2dbd3cacb5fa6359ca5eee74447bfe0667736fdce74e",
+        "README.md": "d479e8d37e39e838704554adca2d48fe765c344aa47120de07e42b98e97c311a",
+        "LICENSE": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+      }
+    },
+    {
+      "name": "usdaeco-buildup",
+      "available": true,
+      "commit": "0852913e366f765096505260184c15cb4bbffceb",
+      "library": {
+        "name": "usdAecoBuildUp",
+        "version": "0.2.0",
+        "kind": "library",
+        "tier": "section",
+        "requires": {
+          "usdAeco": ">=0.9,<1.0"
+        }
+      },
+      "purpose": "shared layered sections for OpenUSD",
+      "status": "Version 0.2.0 targets core v0.9.1 and toolchain v0.2.1. Schema property names, defaults, allowed tokens, derived metadata and applicability match v0.1.2. See [the acceptance record](acceptance.md) for measured checks and deviations.",
+      "example": null,
+      "licence": "Apache-2.0",
+      "source_sha256": {
+        "library.json": "f6b582b3f65c1d0bc072fb0d1a99d103fefde6f872b56faf9835f4e8602ceb0e",
+        "README.md": "5d3a17bd2d9ef00d50697239d3d51fc8e77437937ebfed66c3af619697e00fc1",
+        "docs/usecase.md": "832b77970c76b55ad2b1995c51263bb08a731fdb3238325cd19cd817a9bca211",
+        "LICENSE": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+      }
+    },
+    {
+      "name": "usdaeco-wall",
+      "available": true,
+      "commit": "287e49459a27d6804cf3b023c56f938d523bd5db",
+      "library": {
+        "name": "usdAecoWall",
+        "version": "0.2.0",
+        "kind": "usecase",
+        "tier": "kind",
+        "requires": {
+          "usdAeco": ">=0.9,<1.0",
+          "usdAecoAxis": ">=0.1,<0.2",
+          "usdAecoBuildUp": ">=0.1,<0.3"
+        },
+        "namespaces": [
+          "wall",
+          "opening"
+        ],
+        "classPrefixes": [
+          "AecoWall",
+          "AecoOpening"
+        ]
+      },
+      "purpose": "wall drivers, with bodies from the authoring kernel",
+      "status": "Version 0.2.0 preserves the v0.1.2 schema contract, keeps all 46 inherited checks, and adds the published-stage path and rendered example. [Measured status](status.md) records checks, tests, raw lint, Nix and the remaining blockers. The schema plugin is codeless; validation is a Python UsdValidation plugin. Outputs compose without family plugins.",
+      "example": "examples/datacentre/README.md",
+      "licence": "Apache-2.0",
+      "source_sha256": {
+        "library.json": "05b341da2d75f883f019dd49ef32b2608d34b89d00d2bc4f4085e696e51ea4f1",
+        "README.md": "1df5c3cfeb0fd6b6386dcb9905932cffa79503f9e52358aeeb6e0e51db115acc",
+        "docs/usecase.md": "2e12a06e6a66e938a64f36872c654039a8cd8d5a478cbe1851ca0b9c63002ff3",
+        "LICENSE": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+      }
+    },
+    {
+      "name": "usdaeco-pipe",
+      "available": true,
+      "commit": "56ba32b49efb51854f88fb95db199c285b8b24cb",
+      "library": {
+        "name": "usdAecoPipe",
+        "version": "0.2.0",
+        "kind": "usecase",
+        "tier": "kind",
+        "requires": {
+          "usdAeco": ">=0.9,<1.0",
+          "usdAecoAxis": ">=0.1,<0.2"
+        }
+      },
+      "purpose": "pipe drivers, catalogs and connected fittings",
+      "status": "Version 0.2.0 rebases the five APIs onto core v0.9.1 and axis v0.1.0. Sdf comparison against v0.1.2 proves all 18 property contracts unchanged, including nine derived flags. The original 41 acceptance checks are retained; the full gate is 77/77, pytest is 20/20 and structure lint is 26/26. See [acceptance evidence](acceptance.md) for the full gate, structure lint, tests, render measurements and deviations.",
+      "example": "examples/datacentre/README.md",
+      "licence": "Apache-2.0",
+      "source_sha256": {
+        "library.json": "84f318d15f2582abd71ca5652a7236e281115151f17eceeb202b8f6221eaf3a5",
+        "README.md": "4c47f7bad9af3bb24ede69c5776ac286ba8692f88dc602d324ce38fe1dffc018",
+        "docs/usecase.md": "162dcb1201919c22e5c8089b8755f501c11642c416b07693b25de46e168a8d1f",
+        "LICENSE": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+      }
+    },
+    {
+      "name": "usdaeco-cctv",
+      "available": true,
+      "commit": "d38045082b04028152dfd0aec0869fd5c4037451",
+      "library": {
+        "name": "usdAecoCctv",
+        "version": "0.5.0",
+        "tier": "kind",
+        "requires": {
+          "usdAeco": ">=0.9,<1.0"
+        },
+        "kind": "usecase"
+      },
+      "purpose": "camera coverage over the built thing",
+      "status": "Version 0.5.0 migrates the released nine APIs and 71 properties onto core 0.9 and the common skeleton. The legacy namespace and error-code exceptions, applicable checks, exact pins and measured release results are recorded in [migration acceptance](migration.md). Native compute has a separate release and evidence boundary.",
+      "example": "examples/datacentre/README.md",
+      "licence": "Apache-2.0",
+      "source_sha256": {
+        "library.json": "6a165cad0bf9bd4e254518f178ac7a19da4afeed3d0c1b3163d3c3e843bc5455",
+        "README.md": "fc486fb4736f43bc50502e94de9ac7f743b9eae482413a7fd8b856d42268fed5",
+        "docs/usecase.md": "6abaf6658a4d0811da0795cd0720c8d141ebcaed1835ea650e90f1051b96bfb8",
+        "LICENSE": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+      }
+    },
+    {
+      "name": "usdaeco-cctv-exec",
+      "available": true,
+      "commit": "06fde32bd48c403da46f7c435fcfe469628adeb2",
+      "library": {
+        "name": "usdaeco-cctv-exec",
+        "version": "0.2.0",
+        "kind": "library",
+        "tier": "toolchain",
+        "requires": {
+          "usdAeco": ">=0.9,<1.0",
+          "usdAecoCctv": ">=0.5,<0.6"
+        }
+      },
+      "purpose": "optional compute for camera drivers",
+      "status": "Version 0.2.0 rebases the dependency contract to core 0.9 and CCTV 0.5. Native computation source is unchanged. Current verification and historical v0.1.3 evidence are explicitly separated in [migration acceptance](migration.md).",
+      "example": null,
+      "licence": "Apache-2.0",
+      "source_sha256": {
+        "library.json": "64f36fe24bc5e0f24fb3499ce42536f334d46a6d0b0238b5a0547e7a0a9dd5f9",
+        "README.md": "eee3b2780ae72dcca8beeda0a40c7b74fb9afd03eec24d4b193313eddcbadc13",
+        "docs/usecase.md": "4edf1aa2262fdfd2292953d006364e2a59aca88fe0e3e7208e84da7fd2c2db9e",
+        "LICENSE": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+      }
+    },
+    {
+      "name": "usdaeco-sync",
+      "available": true,
+      "commit": "ee38f402a08b2c5f784bcc4cd5f826233216d091",
+      "library": {
+        "name": "usdAecoSync",
+        "version": "0.5.1",
+        "kind": "library",
+        "tier": "record",
+        "requires": {
+          "usdAeco": ">=0.9,<1.0",
+          "usdAecoAxis": ">=0.1,<0.2"
+        }
+      },
+      "purpose": "edit in USD, let the host solve",
+      "status": "Version 0.5.1. Host integrations are separate packages. Raw S08/S09 retain two [documented compatibility exceptions](docs/host-contract.md#compatibility-and-schema-lint). Native solver and wheel packaging claims belong to their measured integration gates; an exact readback route remains future work.",
+      "example": null,
+      "licence": "Apache-2.0",
+      "source_sha256": {
+        "library.json": "b30e4d6be818c7727ac5f10f465ed3ae378cc2e259411097eb316933cc447e70",
+        "README.md": "45974e77802353edb809e5cefce992b47a4bd899401829456b40ff4d988649a6",
+        "docs/usecase.md": "7c5625604c4d07d48c305f9072c40016d9bb3c89182aacb16f00f6d269558de9",
+        "LICENSE": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+      }
+    },
+    {
+      "name": "usdaeco-ifc",
+      "available": true,
+      "commit": "4374e9140b4bebcfd0d4a465d8458a9a3aa6ef82",
+      "library": {
+        "name": "usdaeco-ifc",
+        "version": "0.1.1",
+        "kind": "integration",
+        "tier": "integration",
+        "requires": {
+          "usdAeco": ">=0.9,<1.0",
+          "usdAecoSync": ">=0.5,<0.6",
+          "usdAecoAxis": ">=0.1,<0.2"
+        }
+      },
+      "purpose": "IFC in, IFC out",
+      "status": "Version 0.1.1, integration kind with no schema directory. S01\u2013S05 and S20\u2013S26 apply; S06\u2013S19 are not applicable. Core is v0.9.1; AecoAxisAPI is supplied by axis v0.1.0. Source metadata allows the entry point to be exercised without installing packages in a shared interpreter. See the acceptance report for observed counts and unresolved packaging or Nix limits.",
+      "example": "examples/roundtrip/README.md",
+      "licence": "Apache-2.0",
+      "source_sha256": {
+        "library.json": "4a8b3ec66ff639f0931930f2a93d07ba3a6d585a28e1b1a929c16391d18693e7",
+        "README.md": "e1adc5d9c96dded86200d4da30a340b55871d1062a02b8c482a7f2d088da1d23",
+        "docs/usecase.md": "32f0d7d6f69367dd89855e1142b25df3e57fbe8e0c6b13c7f7a9bb4c7bf661c2",
+        "LICENSE": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+      }
+    },
+    {
+      "name": "usdaeco-bonsai",
+      "available": true,
+      "commit": "bd3979116249ec207d4f3023f17c7bc7918bcdd8",
+      "library": {
+        "name": "usdaeco-bonsai",
+        "version": "0.1.1",
+        "kind": "integration",
+        "tier": "integration",
+        "requires": {
+          "usdAeco": ">=0.9,<1.0",
+          "usdAecoSync": ">=0.5,<0.6",
+          "usdAecoAxis": ">=0.1,<0.2"
+        }
+      },
+      "purpose": "Bonsai host for driver-based USD exchange",
+      "status": "Version 0.1.1, extracted from the released host code onto sync v0.5.0; re-pinned to core v0.9.1 and axis v0.1.0. Measured results and deviations are recorded in [acceptance.md](acceptance.md).",
+      "example": "examples/roundtrip/README.md",
+      "licence": "Apache-2.0",
+      "source_sha256": {
+        "library.json": "4b546b3ba324f13072074fc5e16efda4f215ce4406ee524af8afa908ec85db5a",
+        "README.md": "49afae61a517c9aa445ce445985af1d78263024c86d4eec5278d287150155361",
+        "docs/usecase.md": "35f9d3b82fe9c6f4170c5b13499acfb745fad76ecb19267c8911d1f82429f23b",
+        "LICENSE": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+      }
+    },
+    {
+      "name": "usdaeco-revit",
+      "available": true,
+      "commit": "ad224f16e206f9446b1237937b5613b574c62250",
+      "library": {
+        "name": "usdaeco-revit",
+        "version": "0.1.1",
+        "kind": "integration",
+        "tier": "integration",
+        "requires": {
+          "usdAeco": ">=0.9,<1.0",
+          "usdAecoSync": ">=0.5,<0.6",
+          "usdAecoAxis": ">=0.1,<0.2"
+        }
+      },
+      "purpose": "Revit host for driver-based USD exchange",
+      "status": "Version 0.1.1, extracted from the released host code onto sync v0.5.0; re-pinned to core v0.9.1 and axis v0.1.0. Measured results and deviations are recorded in [acceptance.md](acceptance.md).",
+      "example": "examples/roundtrip/README.md",
+      "licence": "Apache-2.0",
+      "source_sha256": {
+        "library.json": "14cc76711aa195307540bff82569c6bd9ee0c20b7e4abe4cb714fb2987d696a4",
+        "README.md": "16970f641b005afff27fb188929eb8db9fbd87ab0ec0b2b60960802546763474",
+        "docs/usecase.md": "c9d63ad8d8e348642c4604e234b385fdb7e2202c28dd7e173e929226e0bb8247",
+        "LICENSE": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+      }
+    },
+    {
+      "name": "usdaeco-datacentre",
+      "available": true,
+      "commit": "77d71f3f7372471fc56facc364e562302f1c4d60",
+      "library": {
+        "name": "usdaeco-datacentre",
+        "version": "0.4.2",
+        "kind": "data",
+        "tier": "data",
+        "requires": {
+          "usdaeco-revit": ">=0.1,<0.2"
+        }
+      },
+      "purpose": "generated demo facility and portable USD variants",
+      "status": "Version 0.4.2 passes 181 checks with 0 failures and 172 tests, including four explicit native-variant NOT RUN rows. It uses the shared Revit transport and publishes all five variants through converter 0.1.0 and core 0.8.4. See the [publication acceptance](acceptance-0.4.1.md) and [current Revit acceptance](acceptance-revit-0.4.2.md). Independent layer and manifest bytes agree with no normalization. The data-kind skeleton uses the exact keys required by the shared conventions; schema/plugin/example-directory rules do not apply to this schema-free repo. The gate separately enforces render and vanilla rules for `dist/`, which the generic data structure lint does not inspect. Packaging remains subject to the single recorded Nix input-resolution attempt.",
+      "example": "dist",
+      "licence": "Apache-2.0",
+      "source_sha256": {
+        "library.json": "d610a5c448d9af8f3375bda1a57cc2ffa1b2f68e137659c56655ccc5f36914f5",
+        "README.md": "ef355dab8284f44cdf018522b11253ffbe0104f63a8edfee65c35abe5af0caed",
+        "docs/usecase.md": "c6c6fdbd44176487e54bd9e638db150ed3f0cf6ba6ad6692fd81ef74391edb48",
+        "LICENSE": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+      }
+    },
+    {
+      "name": "usdaeco-board",
+      "available": true,
+      "commit": "8e0ebedee11c117b06bd52bf91058f54ad7f3e02",
+      "library": {
+        "name": "usdaeco-board",
+        "version": "0.1.1",
+        "kind": "board",
+        "tier": "board",
+        "requires": {}
+      },
+      "purpose": "the family, with evidence",
+      "status": "Version 0.1.1. The generator supports the released layouts as well as the common skeleton. `site/summary.json` records counts for each local generation; generated pages and private configuration are intentionally untracked.",
+      "example": null,
+      "licence": "Apache-2.0",
+      "source_sha256": {
+        "library.json": "c885b9ef3c0f0b41b8558167a6ae872ed31455c98a94d29fd92478b62db88197",
+        "README.md": "c8a4166b68dff5fe0988a96aac6454e9b0ddd43f56373f475d3420b0b74d22b5",
+        "docs/usecase.md": "35f1b2d936e201878e3752a548ab50205177abdf9fbc2fccd655d33135f2e25d",
+        "LICENSE": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+      }
+    },
+    {
+      "name": "usdaeco-scenarios",
+      "available": false,
+      "commit": "c7c6870f36e50b67d08ca68c75f949a5b9921d03",
+      "purpose": "Source card unavailable",
+      "reason": "Tagged library manifest missing"
+    },
+    {
+      "name": "usdaeco-meta",
+      "private": true
+    },
+    {
+      "name": "usdaeco-plan",
+      "available": true,
+      "commit": null,
+      "library": {
+        "name": "usdAecoPlan",
+        "version": "0.1.0",
+        "kind": "usecase",
+        "tier": "kind",
+        "requires": {
+          "usdAeco": ">=0.9.2,<1.0"
+        },
+        "licence": "MIT",
+        "namespaces": [
+          "plan",
+          "schedule",
+          "workspace"
+        ],
+        "classPrefixes": [
+          "AecoProgramme",
+          "AecoActivity",
+          "AecoMilestone",
+          "AecoSchedule",
+          "AecoWorkspace"
+        ]
+      },
+      "purpose": "programmes, workspace checks and derived 4D playback",
+      "status": "Version 0.1.0. See [acceptance evidence and deviations](acceptance.md) for measured checks, tests, render inventory and remaining work. Generated schemas, normalized imports, driver/derived separation and the committed example are reproducible against the exact pins in dependencies.json.",
+      "example": "examples/datacentre/README.md",
+      "licence": "MIT",
+      "source_sha256": {
+        "library.json": "db518cdd526b8b35eec2dd65ccf78341384b8c3d779da7573a5bac85586021e6",
+        "README.md": "aebf3cd269c29346f7611c8c93e50001363511c345179a4a184e38f393a81fdd",
+        "docs/usecase.md": "700ffe27484b29e6c6243e4b855ccaa93db77e07d16cbd42a05b5e2875aeab77",
+        "LICENSE": "202a23a57b429d91028dc1b4f62b6342bad6bc3ee294d20c58f363fac184e346"
+      }
+    },
+    {
+      "name": "usdaeco-compliance",
+      "available": true,
+      "commit": null,
+      "library": {
+        "name": "usdAecoCompliance",
+        "version": "0.1.0",
+        "kind": "usecase",
+        "tier": "kind",
+        "requires": {
+          "usdAeco": ">=0.9.2,<1.0"
+        },
+        "licence": "MIT",
+        "namespaces": [
+          "spec",
+          "req",
+          "compliance"
+        ],
+        "classPrefixes": [
+          "AecoSpecification",
+          "AecoRequirement",
+          "AecoCompliance"
+        ]
+      },
+      "purpose": "requirements measured against the built model",
+      "status": "Version 0.1.0: codeless schema, YAML converter, five measured tokens, CLI, seven validators, seeded defects, an iris example and two rendered figures. Acceptance evidence and deviations are maintained in [validation.md](validation.md).",
+      "example": "examples/datacentre/README.md",
+      "licence": "MIT",
+      "source_sha256": {
+        "library.json": "4ee1dce3b28718d29019ecb6737315b9ae7dbe33898202c2fecefdf1a3e69b5b",
+        "README.md": "104ffa13daf3db9b899a1a9dd329cc3801dcef677b4433629bdafb061bdf3bc5",
+        "docs/usecase.md": "3774079f0696f85cef57c973fbf01282692c0b462aabcc3095a260f2f560e0e7",
+        "LICENSE": "202a23a57b429d91028dc1b4f62b6342bad6bc3ee294d20c58f363fac184e346"
+      }
+    },
+    {
+      "name": "usdaeco-typical",
+      "available": true,
+      "commit": null,
+      "library": {
+        "name": "usdAecoTypical",
+        "version": "0.1.0",
+        "kind": "usecase",
+        "tier": "kind",
+        "licence": "MIT",
+        "namespaces": [
+          "typical",
+          "qto"
+        ],
+        "classPrefixes": [
+          "AecoTypical",
+          "AecoQuantity"
+        ],
+        "requires": {
+          "usdAeco": ">=0.9.2,<1.0",
+          "usdAecoBuildUp": ">=0.2,<0.3",
+          "usdAecoAxis": ">=0.1,<0.2"
+        }
+      },
+      "purpose": "repeated floors, explicit drift and measured quantities",
+      "status": "v0.1.0. Gate: 42 checks, 0 failed; structure: 28/0; pytest: 15 passed. All 8 core and 3 local validators load. Core result validation has 0 errors and 0 warnings. The 264-prim result is relocatable and renders with stock Embree. One Nix attempt stopped at nested input resolution; Nix is not proven. The measured two-floor example and seeded validators are implemented. The exact two-finding scenario, a 3.2 m net partition-length difference and a 12-line reconstruction are not proven by the pinned data; measured differences are listed above. See README Status for final gate evidence and Nix limitations.",
+      "example": "examples/datacentre/README.md",
+      "licence": "MIT",
+      "source_sha256": {
+        "library.json": "df5e5bfcd9a9ac7433eea8363a2ce72351a262bfa925173779a73ba14f002f22",
+        "README.md": "23ff0e522a6f829d7b1019d2b24c9a81d5b52c99f6f378cd1abeabf7c82368e9",
+        "docs/usecase.md": "542ca2d29a69dd79b30defac274ba3b09f50915d262394502b751930aeb2a7b7",
+        "LICENSE": "202a23a57b429d91028dc1b4f62b6342bad6bc3ee294d20c58f363fac184e346"
+      }
+    },
+    {
+      "name": "usdaeco-clash",
+      "available": true,
+      "commit": null,
+      "library": {
+        "name": "usdAecoClash",
+        "version": "0.2.0",
+        "kind": "usecase",
+        "tier": "kind",
+        "requires": {
+          "usdAeco": ">=0.9.2,<1.0"
+        },
+        "licence": "MIT",
+        "namespaces": [
+          "clash"
+        ],
+        "classPrefixes": [
+          "AecoClash"
+        ]
+      },
+      "purpose": "mesh and exact clash evidence with measured uncertainty",
+      "status": "Version 0.2.0 delivers both engines, four validators, the measured comparison, two exact tessellation studies, Route S wireframe and portable results. The [acceptance report](acceptance.md) records the gate and remaining limits.",
+      "example": "examples/datacentre/README.md",
+      "licence": "MIT",
+      "source_sha256": {
+        "library.json": "08a958a9dbc5fc8a6accb8af8ea657cae49e4c8508b7a7df110e7ae7625f1bf1",
+        "README.md": "32c9068b4579463f08ca74475e316de61da24407f09f1eb33b956661155ce675",
+        "docs/usecase.md": "e7146e9e3edd572403e1204ae2af5b392b770b9f0a15962645b609e3a663a833",
+        "LICENSE": "202a23a57b429d91028dc1b4f62b6342bad6bc3ee294d20c58f363fac184e346"
+      }
+    },
+    {
+      "name": "usdaeco-solid",
+      "available": true,
+      "commit": null,
+      "library": {
+        "name": "usdaeco-solid",
+        "version": "0.1.0",
+        "kind": "usecase",
+        "tier": "kind",
+        "licence": "MIT",
+        "namespaces": [
+          "solid"
+        ],
+        "classPrefixes": [
+          "AecoSolid"
+        ],
+        "requires": {
+          "usdAeco": ">=0.9,<1.0",
+          "usdaeco-ifc": ">=0.2,<0.3",
+          "usdSolid": ">=0.1,<0.2",
+          "usdSolidOcct": ">=0.1,<0.2"
+        }
+      },
+      "purpose": "exact bodies with ordinary USD proxy twins",
+      "status": "Version 0.1.0. See [acceptance](acceptance.md) for gate totals and deviations. The skeleton was generated with toolchain v0.3.2. Its local-schema-only lint rules are inapplicable because Route S deliberately owns no schema; explicit core applicability, registry and validator tests cover the consumed contract. The frozen core mark's metadata attributes are not themselves flagged `aecoDerived`; this package introduces no new semantic derived attribute and authors only separate result layers. No core checkout is changed.",
+      "example": "examples/datacentre/README.md",
+      "licence": "MIT",
+      "source_sha256": {
+        "library.json": "be3ce0eb102400b14954dbf441e24a6c6dc2c4d52cd2297dce61d96d32b3c4e1",
+        "README.md": "5d0e084cecbc2c907fcef699e097b1f0fbbb1b2595af6e6a32c004c27277a15b",
+        "docs/usecase.md": "422e647cbcf90635c9a7299516a6a86932a4413985dd4711ea7d58e36fbd1969",
+        "LICENSE": "202a23a57b429d91028dc1b4f62b6342bad6bc3ee294d20c58f363fac184e346"
+      }
+    }
+  ]
+}

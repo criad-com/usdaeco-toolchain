@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "usdaeco-toolchain"
+version = "0.3.8"
+description = "Shared build and validation kit for usdAeco libraries and native plugins"
+requires-python = ">=3.11"
+dependencies = ["packaging>=23", "jinja2>=3", "numpy>=1.24"]
+
+[project.optional-dependencies]
+usd = ["usd-core>=26.8"]
+test = ["pytest>=8"]
+publication = ["Pillow>=10", "usd-core>=26.8"]
+
+[project.scripts]
+new-library = "new_library:main"
+usdaeco-publish = "publish:main"
+usdaeco-family-readme = "family_readme:main"
+usdaeco-render = "usdaeco_render.cli:main"
+usdaeco-check = "usdaeco_check.cli:main"
+usdaeco-pluginset = "pluginset:main"
+
+[tool.setuptools]
+package-dir = {"" = "tools"}
+py-modules = ["pluginset", "new_library", "build_schema", "build_codeful_schema", "native_check", "publish", "family_readme"]
+
+[tool.setuptools.packages.find]
+where = ["tools"]
+include = ["usdaeco_check*", "usdaeco_render*"]
+
+[tool.setuptools.package-data]
+usdaeco_check = ["licences/*.txt"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["tools"]
+markers = ["core: integration check requiring a built core checkout (compatibility probes use v0.8.4)"]
+
+[tool.setuptools.data-files]
+"share/usdaeco-toolchain/template" = ["template/.gitignore", "template/CHANGELOG.md", "template/LICENSE", "template/README.md", "template/build.sh", "template/check.py", "template/dependencies.json", "template/flake.nix", "template/library.json", "template/pyproject.toml", "template/reduced-flake.nix"]
+"share/usdaeco-toolchain/template/conformance/profiles" = ["template/conformance/profiles/example.json"]
+"share/usdaeco-toolchain/template/docs" = ["template/docs/usecase.md"]
+"share/usdaeco-toolchain/template/examples" = ["template/examples/minimal.usda"]
+"share/usdaeco-toolchain/template/examples/datacentre" = ["template/examples/datacentre/README.md", "template/examples/datacentre/manifest.json", "template/examples/datacentre/run.py"]
+"share/usdaeco-toolchain/template/examples/datacentre/expected" = ["template/examples/datacentre/expected/findings.json"]
+"share/usdaeco-toolchain/template/examples/datacentre/inputs" = ["template/examples/datacentre/inputs/.keep", "template/examples/datacentre/inputs/cameras.usda"]
+"share/usdaeco-toolchain/template/examples/datacentre/renders" = ["template/examples/datacentre/renders/.keep", "template/examples/datacentre/renders/overview.png"]
+"share/usdaeco-toolchain/template/testenv" = ["template/testenv/testUsdAecoExampleSchema.py", "template/testenv/testUsdAecoExampleValidators.py"]
+"share/usdaeco-toolchain/template/tools/usdaeco_example" = ["template/tools/usdaeco_example/__init__.py", "template/tools/usdaeco_example/cli.py"]
+"share/usdaeco-toolchain/template/usdAecoExample" = ["template/usdAecoExample/generatedSchema.usda", "template/usdAecoExample/plugInfo.json", "template/usdAecoExample/schema.usda"]
+"share/usdaeco-toolchain/template/usdAecoExample/examples" = ["template/usdAecoExample/examples/minimal.usda"]
+"share/usdaeco-toolchain/template/usdAecoExample/userDoc" = ["template/usdAecoExample/userDoc/overview.md", "template/usdAecoExample/userDoc/schemaUserDoc.usda", "template/usdAecoExample/userDoc/usdAecoExampleExample.png"]
+"share/usdaeco-toolchain/template/usdAecoExampleValidators" = ["template/usdAecoExampleValidators/__init__.py", "template/usdAecoExampleValidators/plugInfo.json", "template/usdAecoExampleValidators/validatorTokens.py"]
+"share/usdaeco-toolchain/template/examples/datacentre/result" = ["template/examples/datacentre/result/README.md", "template/examples/datacentre/result/example.usdc", "template/examples/datacentre/result/vanilla.png"]
+"share/usdaeco-toolchain/template/examples/datacentre/result/layers/inputs" = ["template/examples/datacentre/result/layers/inputs/cameras.usda"]
+"share/usdaeco-toolchain/template/examples/datacentre/result/layers/out" = ["template/examples/datacentre/result/layers/out/derived.usda"]

@@ -1,0 +1,25 @@
+#usda 1.0
+(
+    subLayers = [@usd/schema.usda@]
+)
+over "GLOBAL" (
+    customData = {
+        string libraryName = "usdAecoExampleNative"
+        string libraryPath = "usdAecoExampleNative"
+        bool skipCodeGeneration = false
+        bool useLiteralIdentifier = true
+    }
+) {}
+
+class AecoExampleNativeRecord "AecoExampleNativeRecord" (
+    inherits = </Typed>
+    doc = "A standalone example record, demonstrating a codeful referent."
+    customData = {
+        string className = "Record"
+        token[] fallbackTypes = ["Scope"]
+    }
+) {
+    string aeco:exampleNative:message = "hello" (
+        doc = "An authored greeting carried by this example record."
+    )
+}

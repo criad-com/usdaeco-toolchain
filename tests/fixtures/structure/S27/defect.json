@@ -1,0 +1,5 @@
+{
+  "file": "examples/datacentre/manifest.json",
+  "before": "\"prim_count\": 4",
+  "after": "\"prim_count\": 999"
+}

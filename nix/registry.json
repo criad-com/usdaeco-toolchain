@@ -1,0 +1,236 @@
+{
+  "version": 2,
+  "flakes": [
+    {
+      "from": {
+        "type": "github",
+        "owner": "criad-com",
+        "repo": "aeco-toolchain"
+      },
+      "to": {
+        "type": "git",
+        "url": "https://github.com/criad-com/aeco-toolchain.git"
+      }
+    },
+    {
+      "from": {
+        "type": "github",
+        "owner": "criad-com",
+        "repo": "usdaeco-core"
+      },
+      "to": {
+        "type": "git",
+        "url": "https://github.com/criad-com/usdaeco-core.git"
+      }
+    },
+    {
+      "from": {
+        "type": "github",
+        "owner": "criad-com",
+        "repo": "usdaeco-toolchain"
+      },
+      "to": {
+        "type": "git",
+        "url": "https://github.com/criad-com/usdaeco-toolchain.git"
+      }
+    },
+    {
+      "from": {
+        "type": "github",
+        "owner": "criad-com",
+        "repo": "usdaeco-axis"
+      },
+      "to": {
+        "type": "git",
+        "url": "https://github.com/criad-com/usdaeco-axis.git"
+      }
+    },
+    {
+      "from": {
+        "type": "github",
+        "owner": "criad-com",
+        "repo": "usdaeco-buildup"
+      },
+      "to": {
+        "type": "git",
+        "url": "https://github.com/criad-com/usdaeco-buildup.git"
+      }
+    },
+    {
+      "from": {
+        "type": "github",
+        "owner": "criad-com",
+        "repo": "usdaeco-wall"
+      },
+      "to": {
+        "type": "git",
+        "url": "https://github.com/criad-com/usdaeco-wall.git"
+      }
+    },
+    {
+      "from": {
+        "type": "github",
+        "owner": "criad-com",
+        "repo": "usdaeco-pipe"
+      },
+      "to": {
+        "type": "git",
+        "url": "https://github.com/criad-com/usdaeco-pipe.git"
+      }
+    },
+    {
+      "from": {
+        "type": "github",
+        "owner": "criad-com",
+        "repo": "usdaeco-solid"
+      },
+      "to": {
+        "type": "git",
+        "url": "https://github.com/criad-com/usdaeco-solid.git"
+      }
+    },
+    {
+      "from": {
+        "type": "github",
+        "owner": "criad-com",
+        "repo": "usdaeco-clash"
+      },
+      "to": {
+        "type": "git",
+        "url": "https://github.com/criad-com/usdaeco-clash.git"
+      }
+    },
+    {
+      "from": {
+        "type": "github",
+        "owner": "criad-com",
+        "repo": "usdaeco-plan"
+      },
+      "to": {
+        "type": "git",
+        "url": "https://github.com/criad-com/usdaeco-plan.git"
+      }
+    },
+    {
+      "from": {
+        "type": "github",
+        "owner": "criad-com",
+        "repo": "usdaeco-compliance"
+      },
+      "to": {
+        "type": "git",
+        "url": "https://github.com/criad-com/usdaeco-compliance.git"
+      }
+    },
+    {
+      "from": {
+        "type": "github",
+        "owner": "criad-com",
+        "repo": "usdaeco-typical"
+      },
+      "to": {
+        "type": "git",
+        "url": "https://github.com/criad-com/usdaeco-typical.git"
+      }
+    },
+    {
+      "from": {
+        "type": "github",
+        "owner": "criad-com",
+        "repo": "usdaeco-cctv"
+      },
+      "to": {
+        "type": "git",
+        "url": "https://github.com/criad-com/usdaeco-cctv.git"
+      }
+    },
+    {
+      "from": {
+        "type": "github",
+        "owner": "criad-com",
+        "repo": "usdaeco-cctv-exec"
+      },
+      "to": {
+        "type": "git",
+        "url": "https://github.com/criad-com/usdaeco-cctv-exec.git"
+      }
+    },
+    {
+      "from": {
+        "type": "github",
+        "owner": "criad-com",
+        "repo": "usdaeco-sync"
+      },
+      "to": {
+        "type": "git",
+        "url": "https://github.com/criad-com/usdaeco-sync.git"
+      }
+    },
+    {
+      "from": {
+        "type": "github",
+        "owner": "criad-com",
+        "repo": "usdaeco-ifc"
+      },
+      "to": {
+        "type": "git",
+        "url": "https://github.com/criad-com/usdaeco-ifc.git"
+      }
+    },
+    {
+      "from": {
+        "type": "github",
+        "owner": "criad-com",
+        "repo": "usdaeco-bonsai"
+      },
+      "to": {
+        "type": "git",
+        "url": "https://github.com/criad-com/usdaeco-bonsai.git"
+      }
+    },
+    {
+      "from": {
+        "type": "github",
+        "owner": "criad-com",
+        "repo": "usdaeco-revit"
+      },
+      "to": {
+        "type": "git",
+        "url": "https://github.com/criad-com/usdaeco-revit.git"
+      }
+    },
+    {
+      "from": {
+        "type": "github",
+        "owner": "criad-com",
+        "repo": "usdaeco-datacentre"
+      },
+      "to": {
+        "type": "git",
+        "url": "https://github.com/criad-com/usdaeco-datacentre.git"
+      }
+    },
+    {
+      "from": {
+        "type": "github",
+        "owner": "criad-com",
+        "repo": "usdaeco-scenarios"
+      },
+      "to": {
+        "type": "git",
+        "url": "https://github.com/criad-com/usdaeco-scenarios.git"
+      }
+    },
+    {
+      "from": {
+        "type": "github",
+        "owner": "criad-com",
+        "repo": "usdaeco-board"
+      },
+      "to": {
+        "type": "git",
+        "url": "https://github.com/criad-com/usdaeco-board.git"
+      }
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "file": "usdAecoExample/schema.usda",
+  "before": "token[] apiSchemaCanOnlyApplyTo = [\"Imageable\"]",
+  "after": ""
+}

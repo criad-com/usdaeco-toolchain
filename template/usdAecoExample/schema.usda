@@ -1,0 +1,39 @@
+#usda 1.0
+(
+    subLayers = [
+        @usd/schema.usda@,
+        @usdGeom/schema.usda@,
+        @usdAeco/schema.usda@
+    ]
+)
+
+over "GLOBAL" (
+    customData = {
+        string libraryName = "usdAecoExample"
+        string libraryPath = "./"
+        bool skipCodeGeneration = true
+        bool useLiteralIdentifier = true
+    }
+) {}
+
+class "AecoExampleAPI" (
+    inherits = </APISchemaBase>
+    doc = "Example semantic aspect. Replace these properties with the library's contract."
+    customData = {
+        string className = "ExampleAPI"
+        token apiSchemaType = "singleApply"
+        # S10: if this API must also apply to untyped prims, replace the
+        # restriction below with string aecoApplicability = "unrestricted".
+        # The class doc must include a sentence explaining why, for example:
+        # "This API supports untyped catalog class prims for inherited defaults."
+        token[] apiSchemaCanOnlyApplyTo = ["Imageable"]
+    }
+) {
+    double aeco:example:driver = 1 (
+        doc = "Driving value, in metres."
+    )
+    double aeco:example:derived = 1 (
+        aecoDerived = true
+        doc = "Computed value, in metres. Written by a derivation."
+    )
+}
