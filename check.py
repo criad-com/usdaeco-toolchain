@@ -21,7 +21,7 @@ from usdaeco_check.publication import check_publication
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--without-core", action="store_true", help="exclude legacy core runtime tests; schema lint still needs compiler dependencies")
+    parser.add_argument("--without-core", action="store_true", help="exclude core runtime tests; schema lint still needs compiler dependencies")
     parser.add_argument("--without-native", action="store_true", help="source-only compatibility gate; excludes the four native build/runtime rows")
     parser.add_argument("--family", help="train for an additional live family README freshness check")
     parser.add_argument("--family-repos", help="source checkouts for the selected train")

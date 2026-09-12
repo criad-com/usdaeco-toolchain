@@ -38,6 +38,50 @@ def test_s05_rejects_other_public_owners(tmp_path, owner):
     assert not result and result.detail == "flake URLs and exact dependency refs differ"
 
 
+@pytest.mark.parametrize("fixture", [False, True], ids=["direct", "fixture"])
+@pytest.mark.parametrize("repository", [
+    "usdaeco-core", "usdaeco-toolchain", "usdAeco", "usdAecoAxis",
+    "aeco-toolchain", "usdSolid", "usdSolidOcct", "hdOcct",
+])
+def test_s05_rejects_matching_family_hash_pins(tmp_path, repository, fixture):
+    repo = new_library("Example", tmp_path / "repo", kind="data")
+    path = repo / "dependencies.json"
+    document = read_json(path)
+    pin = {"repo": repository, "library": None, "ref": "v0.4.0"}
+    group = document.setdefault("fixtures", {}) if fixture else document["repos"]
+    if fixture:
+        pin.update(flakeInput=True, reason="Regression input")
+    group["selected"] = pin
+    path.write_text(json.dumps(document))
+    flake = repo / "flake.nix"
+    url = f"github:criad-com/{repository}?ref={pin['ref']}"
+    flake.write_text(flake.read_text().replace("inputs = {", f'inputs = {{\n    selected.url = "{url}";'))
+    assert all(check_structure(repo, only=["S04", "S05"]))
+    pin["ref"] = "0123456789abcdef0123456789abcdef01234567"
+    path.write_text(json.dumps(document))
+    flake.write_text(flake.read_text().replace(url, f"github:criad-com/{repository}?ref={pin['ref']}"))
+    # S04 retains exact-revision evidence; S05 forbids those refs for family inputs.
+    assert all(check_structure(repo, only=["S04"]))
+    result, = check_structure(repo, only=["S05"])
+    assert not result
+    assert result.detail == "selected: family flake inputs require a release tag (?ref=v<semver>) matching the pin; commit hashes are rejected"
+
+
+@pytest.mark.parametrize("repository", ["nixpkgs", "OpenUSD"])
+def test_s05_allows_non_family_hash_pins(tmp_path, repository):
+    repo = new_library("Example", tmp_path / "repo", kind="data")
+    path = repo / "dependencies.json"
+    document = read_json(path)
+    pin = {"repo": repository, "library": None, "ref": "0123456789abcdef0123456789abcdef01234567"}
+    document["repos"]["upstream"] = pin
+    path.write_text(json.dumps(document))
+    flake = repo / "flake.nix"
+    flake.write_text(flake.read_text().replace("inputs = {", 'inputs = {\n'
+        f'    upstream.url = "github:criad-com/{repository}?ref={pin["ref"]}";'))
+    results = check_structure(repo, only=["S04", "S05"])
+    assert all(results), [(r.name, r.detail) for r in results if not r]
+
+
 @pytest.mark.parametrize("assignment", [
     'version = "0.3.7";',
     'version\n =\n "0.3.7";',
@@ -92,12 +136,12 @@ def repo_with_fixture(tmp_path):
     repo = new_library("Example", tmp_path / "repo")
     path = repo / "dependencies.json"
     document = read_json(path)
-    document["fixtures"] = {"legacy-core": read_json(ROOT / "dependencies.json")["fixtures"]["core"]}
+    document["fixtures"] = {"fixture-core": read_json(ROOT / "dependencies.json")["fixtures"]["core"]}
     path.write_text(json.dumps(document))
-    fixture = document["fixtures"]["legacy-core"]
+    fixture = document["fixtures"]["fixture-core"]
     flake = repo / "flake.nix"
     flake.write_text(flake.read_text().replace("inputs = {", 'inputs = {\n'
-        f'    legacy-core.url = "github:criad-com/{fixture["repo"]}?ref={fixture["ref"]}";'))
+        f'    fixture-core.url = "github:criad-com/{fixture["repo"]}?ref={fixture["ref"]}";'))
     return repo
 
 
@@ -115,13 +159,13 @@ def test_fixture_pin_is_separate_from_direct_requirements(repo_with_fixture):
 @pytest.mark.parametrize("change,message", [
     ({"ref": "main"}, "ref must be an exact release tag or full revision"),
     ({"ref": "0123456789abcdef0123456789abcdef01234567"}, "schema revision pins need a version"),
-    ({"reason": None}, "legacy-core: fixture needs a nonblank reason"),
-    ({"reason": "  "}, "legacy-core: fixture needs a nonblank reason"),
+    ({"reason": None}, "fixture-core: fixture needs a nonblank reason"),
+    ({"reason": "  "}, "fixture-core: fixture needs a nonblank reason"),
 ])
 def test_fixture_pins_require_exact_refs_and_reasons(repo_with_fixture, change, message):
     path = repo_with_fixture / "dependencies.json"
     document = read_json(path)
-    document["fixtures"]["legacy-core"].update(change)
+    document["fixtures"]["fixture-core"].update(change)
     path.write_text(json.dumps(document))
     result, = check_structure(repo_with_fixture, only=["S04"])
     assert not result and result.detail == message
@@ -129,7 +173,7 @@ def test_fixture_pins_require_exact_refs_and_reasons(repo_with_fixture, change, 
 
 @pytest.mark.parametrize("fixtures,message", [
     ([], "fixtures must be an object"),
-    ({"legacy-core": {"flakeInput": "yes"}}, "legacy-core: flakeInput must be a boolean"),
+    ({"fixture-core": {"flakeInput": "yes"}}, "fixture-core: flakeInput must be a boolean"),
     ({"core": {"flakeInput": True}}, "fixture input names must be distinct from direct pins"),
 ])
 def test_fixture_declarations_reject_ambiguous_inputs(repo_with_fixture, fixtures, message):
@@ -143,7 +187,8 @@ def test_fixture_declarations_reject_ambiguous_inputs(repo_with_fixture, fixture
 
 def test_fixture_flake_pin_must_match(repo_with_fixture):
     flake = repo_with_fixture / "flake.nix"
-    flake.write_text(flake.read_text().replace("?ref=v0.8.4", "?ref=v0.8.3"))
+    ref = read_json(repo_with_fixture / "dependencies.json")["fixtures"]["fixture-core"]["ref"]
+    flake.write_text(flake.read_text().replace(f"?ref={ref}", "?ref=v0.0.1"))
     result, = check_structure(repo_with_fixture, only=["S05"])
     assert not result and result.detail == "flake URLs and exact dependency refs differ"
 

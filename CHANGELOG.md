@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.3.10 — 2026-09-12
+
+- Pin the build toolchain to published v0.4.0 and the core test fixture to
+  published clean-core v0.9.2, recording both checked revisions. The upstream
+  usd-dev output and nixpkgs revision are unchanged; OpenUSD now uses its
+  public upstream URL at the same revision.
+- Extend S05 without renumbering: direct and declared fixture family inputs
+  require matching release-tag refs; matching commit-hash pins fail clearly.
+  Non-family upstream inputs such as nixpkgs and OpenUSD retain hash support.
+- Retire the v0.8 compatibility rewrite, old source-layout/axis probes and the
+  test that depended on v0.8 rejecting the current starter. Exercise current
+  flat core builds, metadata registration, plugin sets and unsupported ranges
+  with v0.9.2 instead; require all eight core validators and detect a seeded
+  duplicate identity. No old core schema tree is retained as test data.
+- Move the starter core pin and example provenance to v0.9.2 as well. Keep
+  the starter toolchain on published v0.3.8 until consumer release scheduling.
+
 ## 0.3.9 — 2026-09-12
 
 - Read the Nix Python package version from library.json in the toolchain and

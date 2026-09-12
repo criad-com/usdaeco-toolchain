@@ -1,5 +1,5 @@
 {
   "file": "dependencies.json",
-  "before": "v0.9.3",
+  "before": "v0.9.2",
   "after": "v0.8.0"
 }

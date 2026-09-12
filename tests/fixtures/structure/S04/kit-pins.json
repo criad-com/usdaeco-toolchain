@@ -2,6 +2,6 @@
   "solid": {"repo": "usdSolid", "library": "usdSolid", "ref": "v0.1.0"},
   "occt": {"repo": "usdSolidOcct", "library": null, "ref": "v0.1.0"},
   "hydra": {"repo": "hdOcct", "library": null, "ref": "v0.1.0"},
-  "native-toolchain": {"repo": "aeco-toolchain", "library": null, "ref": "0123456789abcdef0123456789abcdef01234567"},
+  "native-toolchain": {"repo": "aeco-toolchain", "library": null, "ref": "v0.4.0"},
   "usd": {"repo": "OpenUSD", "library": null, "ref": "0123456789abcdef0123456789abcdef01234567"}
 }

@@ -45,7 +45,7 @@ env -u PYTHONPATH "$PYTHON" check.py
 env -u PYTHONPATH "$PYTHON" examples/datacentre/run.py
 ```
 
-The generated repository targets core v0.9.3. Its minimal example runs without
+The generated repository targets core v0.9.2. Its minimal example runs without
 the published data-centre stage; the manifest records that as `minimal`.
 Set AECO_DATACENTRE_ROOT to use the pinned release, or AECO_DATACENTRE_STAGE for
 an explicit compatibility probe. The [example contract](docs/examples.md)
@@ -63,36 +63,34 @@ committed results using canonical Sdf USDA serialization for the crate.
 
 ## Build and check
 
-For the toolchain's legacy compatibility tests, select a separate frozen core
-v0.8.4 checkout with its existing built resources:
+For the toolchain tests, select a core v0.9.2 checkout with its existing
+built resources. The fixture checks both source and plugin versions:
 
 ```sh
 export PYTHON=python3
 export PYTHONDONTWRITEBYTECODE=1
-export USDAECO_CORE_DIR="$(cd ../usdaeco-core-0.8 && pwd)"
-export CORE_PLUGIN_DIR="$USDAECO_CORE_DIR/plugins/usdAeco/resources"
-env -u PYTHONPATH "$PYTHON" check.py
+export USDAECO_CORE_DIR="$(cd ../usdaeco-core && pwd)"
+export CORE_PLUGIN_DIR="$USDAECO_CORE_DIR/out/plugins/usdAeco/resources"
+env -u PYTHONPATH "$PYTHON" check.py --without-native
 env -u PYTHONPATH "$PYTHON" -m pytest -q
 nix flake check
 ```
 
-The checker prints `N checks, M failed, K not run`. Unavailable native build
-prerequisites produce NOT RUN rows with a cause; actual build and runtime
-defects fail. NOT RUN counts separately and never establishes a passed check.
-The gate includes all structure rules on a
-freshly generated repository. The toolchain's compatibility tests use the
-released core v0.8.4; template target-pin validation against v0.9.3 remains a
-separate obligation. Set USDAECO_CORE_DIR and CORE_PLUGIN_DIR for other layouts.
-Use a separate v0.8.4 checkout for these compatibility probes; the current
-v0.9.3 consumer checks use its own built plugin resources. Tests import tools/
-directly through conftest.py and need no installed kit or setuptools.
+The checker prints `N checks, M failed, K not run`. `--without-native` runs
+all source and core tests without attempting native Nix builds. Omit it to
+include the four native build/runtime rows. Unavailable native prerequisites
+produce NOT RUN rows with a cause; actual build and runtime defects fail.
+The gate checks all 29 structure rules on this repository and a freshly
+generated starter. Tests import tools/ through conftest.py; no installed kit
+or setuptools is needed. Core validator tests explicitly import the selected
+checkout and load all eight rules; missing imports or validators fail.
 
 `dependencies.json.repos` records the sole direct build input, `aeco-toolchain`,
-at its exact upstream revision. `dependencies.json.fixtures.core` records
-v0.8.4 and why the tests need its old layout. Its `flakeInput: true` declares
-the retained test input for S04/S05; unmarked historical evidence needs no
-flake input. Fixture pins cannot satisfy a library's declared requirements. The generated
-starter pins core v0.9.3, data centre v0.4.6 and toolchain v0.3.8 as direct inputs.
+at published tag v0.4.0 plus its checked revision. `fixtures.core` records
+published core v0.9.2 and its checked revision. Its `flakeInput: true` declares
+a separate test input for S04/S05; fixture pins cannot satisfy a library's
+requirements. The starter pins core v0.9.2, data centre v0.4.6 and toolchain
+v0.3.8 as direct inputs. No core v0.8 schema/layout fixture is needed.
 
 Install the kit into a suitable environment with
 `env -u PYTHONPATH "$PYTHON" -m pip install -e .`, or invoke the source scripts.
@@ -108,9 +106,12 @@ output and older schemas/<lib>/ source layout remain supported. Repeat --dep
 for dependencies; repository roots, flat modules and install roots are accepted.
 `--generate-only` compiles for inspection without claiming version compatibility.
 
-Nix sources use public `github:criad-com/<repo>?ref=<tag>` inputs. The untagged
-processing toolchain is pinned by a full revision. All exact refs are recorded
-in dependencies.json under repos or fixtures; template requirements are ranges
+Nix sources use public `github:criad-com/<repo>?ref=v<semver>` inputs. S05
+rejects family commit-hash pins, including test-only inputs. Use tags published
+on the public copy; orphan release commits differ from source commits.
+Non-family upstream inputs such as nixpkgs and OpenUSD may keep hashes.
+All exact refs are recorded in dependencies.json under repos or fixtures;
+template requirements are ranges
 in library.json.
 
 The committed [registry template](nix/registry.json) contains public URLs.
@@ -130,15 +131,17 @@ deployment addresses into documentation or lockfiles:
 
 ```sh
 export CORE_OVERRIDE="$(env -u PYTHONPATH "$PYTHON" -c 'import json, os; d=json.load(open(os.environ["AECO_REGISTRY"])); print("git+"+next(e["to"]["url"] for e in d["flakes"] if e["from"]["repo"]=="usdaeco-core"))')"
-nix flake check --no-write-lock-file --override-input core "$CORE_OVERRIDE?ref=v0.8.4"
+nix flake check --no-write-lock-file --override-input core "$CORE_OVERRIDE?ref=v0.9.2"
 ```
 
-In a generated repository use its core pin (v0.9.3). Repeat --override-input for
+In a generated repository use its core pin (v0.9.2). Repeat --override-input for
 other direct/transitive inputs if necessary. A Git override uses `?ref=<tag>`
-for a release tag and `?rev=<full-revision>` for a commit; use the latter for
-the processing-toolchain pin. The toolchain follows the processing
+for a release tag, including processing-toolchain v0.4.0; upstream commit
+overrides use `?rev=<full-revision>`. The toolchain follows the processing
 toolchain's nixpkgs/Python ABI. Consumer core inputs follow the same toolchain
-and nixpkgs. Local lockfiles remain uncommitted. Native build and Nix results are recorded in [native verification](docs/native-verification.md).
+and nixpkgs. Local lockfiles remain uncommitted. The current Nix result is in
+[tag pin verification](docs/tag-pin-verification.md); earlier native results
+are in [native verification](docs/native-verification.md).
 
 ### Native plugins
 
@@ -198,24 +201,20 @@ Derived opinions belong in their own layers; editors author drivers only.
 
 ## Status
 
-Version 0.3.8 uses the public GitHub org `criad-com` across exact flake URLs,
-registry mappings, starter documentation, family links and publication reports.
-S05 accepts that owner only; S25 permits its exact slug while retaining the
-bare-company-term check. Starter toolchain pins advance to v0.3.8; all other
-dependency pins and committed result files are retained.
+Version 0.3.10 selects published build-toolchain v0.4.0 and core fixture
+v0.9.2, with S05 enforcing matching release tags for every family flake input.
+Build and runtime tests use the clean-core layout and the starter's unchanged
+`>=0.9,<1.0` range. The source gate passes **65 checks, 0 failed**, with
+**497 tests passed** and **29/29 structure rules** on both the kit and generated
+starter. Both replacement tags resolve publicly without credentials. The
+single offline Nix build evaluated 0.3.10 but was interrupted after planning
+898 prerequisite derivations; package completion and native runtime remain
+unproven. See [tag pin verification](docs/tag-pin-verification.md) for evidence
+and the four explicitly excluded native gate rows.
 
-The full gate recorded **69 checks, 0 failed, 4 not run**, with **469 tests
-passed**, including legacy core v0.8.4 compatibility tests. Final hostname
-hardening passed **25 focused tests**, including three regressions added after
-the full suite. The toolchain and generated template each pass **29/29 structure
-rules**. Available core, axis and CCTV checkouts each pass **28/29**, failing
-S05 because their public-name rewrites have not landed. All eight core validators
-were explicitly imported and loaded. See [public-name verification](docs/public-name-verification.md)
-for the acceptance table, exact consumer revisions and remaining work.
-
-Earlier fixture-pin and starter build evidence remains in
-[fixture pin verification](docs/fixture-pin-verification.md); portable-source
-and S29 evidence remains in [relocation verification](docs/relocation-verification.md).
+Earlier evidence remains in [public-name verification](docs/public-name-verification.md),
+[fixture pin verification](docs/fixture-pin-verification.md) and
+[relocation verification](docs/relocation-verification.md).
 
 The v0.3.4 publication verification recorded **20 newer tagged repositories**:
 **1,725 files**,
@@ -225,9 +224,9 @@ its private metadata entry is excluded. The family README fresh-check passes
 against that explicit train. See [publication verification](docs/publication-verification.md)
 for every tag, licence, source hash and remaining limitation.
 
-The single v0.3.8 Nix flake check stopped resolving the upstream OpenUSD source
-with outbound networking blocked. Four native rows remain NOT RUN; Nix
-reproduction and native runtime are not proven. Earlier dependency and licence checks are recorded in
+The earlier v0.3.8 Nix flake check stopped resolving the upstream OpenUSD source
+with outbound networking blocked; its four native rows were NOT RUN.
+Earlier dependency and licence checks are recorded in
 [dependency verification](docs/dependency-verification.md).
 
 The committed starter result totals **78,991 bytes**, including its stock USD

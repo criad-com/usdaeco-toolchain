@@ -9,6 +9,30 @@ import pytest
 from conftest import ROOT, run_python
 
 
+@pytest.mark.core
+def test_clean_core_registry_runs_all_eight_validators(core):
+    result = run_python('''
+from pxr import Plug, Sdf, Usd, UsdValidation
+Plug.Registry().RegisterPlugins(sys.argv[1])
+import usdAecoValidators  # Import failure must fail the gate.
+registry = UsdValidation.ValidationRegistry()
+metadata = registry.GetValidatorMetadataForKeyword("UsdAecoValidators")
+assert len(metadata) == 8, [m.name for m in metadata]
+assert all(registry.GetOrLoadValidatorByName(m.name) for m in metadata)
+from usdaeco_check.validation import run
+stage = Usd.Stage.CreateInMemory()
+assert run(stage, ["UsdAecoValidators"]) == []
+for path in ("/First", "/Second"):
+    prim = stage.DefinePrim(path, "Xform")
+    prim.AddAppliedSchema("AecoElementAPI")
+    prim.GetAttribute("aeco:id").Set("element.same")
+assert "duplicateId" in {error.GetName() for error in run(stage, ["UsdAecoValidators"])}
+print("8 core validators loaded; duplicate identity detected")
+''', core[0] / "usdAecoValidators", plugins=[core[1]],
+        PYTHONPATH=str(core[0]), TOOLCHAIN_DIR=str(ROOT))
+    assert result.returncode == 0, result.stdout + result.stderr
+
+
 def test_template_registry_discovers_two_real_validators():
     result = run_python('''
 from pathlib import Path

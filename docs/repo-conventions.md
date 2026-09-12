@@ -36,7 +36,7 @@ examples/datacentre/
 | S02 | All | One H1 `<name> — <one line>` and the eight H2 headings below, in order. |
 | S03 | All | `library.json`: name, semantic version, kind, tier, requires object; optional namespaces and classPrefixes are nonempty arrays of nonempty strings (whitespace-only entries fail). Omitted arrays default to the library suffix and `Aeco<X>` respectively. Tiers core, section, kind, record, sector, organization, project, toolchain, data, gate, board, integration. Requirements are nonempty comma-separated bounds using `<`, `<=`, `>`, `>=`, `~=`; never `==`, `!=`, bare versions or wildcards. |
 | S04 | All | `dependencies.json`: `repos` maps input names to `{repo, library, ref}`. Repository names accept lowercase slugs (including `usdaeco-*`), `usdAeco` / `usdAeco<X>`, and the exact kit/upstream allowlist below. Invalid names report the input key, offending repository name and accepted forms. Each ref is an exact `vX.Y.Z` tag or 40-hex revision (schema-library revisions also declare `version`); each requirement has exactly one direct pin and its version satisfies the range. Optional `fixtures` retains historical evidence. Entries marked `flakeInput: true` declare separate test input names with the same pin shape plus a nonblank `reason`; fixtures cannot satisfy requirements. Unmarked evidence is outside the input-pin checks. |
-| S05 | All | Every direct or explicitly declared fixture flake URL uses `github:criad-com/<repo>?ref=<ref>` and matches a dependency pin; every pin has a URL; `nixpkgs.follows` present. Package versions agree with `library.json`: every literal `version = "…";` in `flake.nix` must match its version; derived expressions are allowed (prefer `(builtins.fromJSON (builtins.readFile ./library.json)).version`). Schema flakes expose default, pluginSet, library/structure checks, default dev shell and example/render apps. |
+| S05 | All | Every direct or explicitly declared fixture flake URL uses `github:criad-com/<repo>?ref=<ref>` and matches a dependency pin; family inputs require `?ref=v<semver>` release tags and reject commit hashes (non-family upstream inputs may retain hashes); every pin has a URL; `nixpkgs.follows` present. Package versions agree with `library.json`: every literal `version = "…";` in `flake.nix` must match its version; derived expressions are allowed (prefer `(builtins.fromJSON (builtins.readFile ./library.json)).version`). Schema flakes expose default, pluginSet, library/structure checks, default dev shell and example/render apps. |
 | S06 | Schema | Exactly one immediate schema directory, named as the library, containing schema.usda, generatedSchema.usda and plugInfo.json. Source and install layouts are distinct. |
 | S07 | Schema | GLOBAL.libraryName equals the directory; skipCodeGeneration and useLiteralIdentifier true; sublayers usd/schema.usda, usdGeom/schema.usda, usdAeco/schema.usda (core omits itself). |
 | S08 | Schema | All local class identifiers start with any declared classPrefixes entry (case-sensitive), defaulting to `Aeco<X>`. Undeclared extras fail. Their className still yields registered type `Usd` + libraryName without `usd` + className. Stage data uses the class identifier. |
@@ -108,8 +108,17 @@ including `usdSolidExtra` and `OpenUSD-fork`, fail; a `kind` field does not
 bypass the name check. The allowlist applies to each pin's `repo` value,
 independently of its input key or `library`. Exact refs, library uniqueness
 and declared version ranges are checked as before, including for kit pins.
-S05 still requires matching public flake URLs, and example manifests must
-record the same pins. No consumer adapter is needed.
+S05 requires family flake inputs to be tag refs (`?ref=v<semver>`) matching
+the pin; commit hashes are rejected, even when the URL and pin agree. This
+covers direct and `flakeInput: true` fixture inputs for `usdaeco-*`, `usdAeco`
+/ `usdAeco<X>`, `aeco-toolchain`, `usdSolid`, `usdSolidOcct` and `hdOcct`.
+Non-family upstream inputs such as nixpkgs and OpenUSD may keep hashes. S04
+still accepts revision evidence; unmarked historical fixtures need no URL.
+An optional `revision` alongside a tag records the checkout used for checks,
+not a substitute flake ref. Public orphan releases have different commit
+identities, so family URLs must use their published tags. S05 checks syntax
+and pin agreement offline; publication must separately establish that the
+tag exists. Example manifests must record the same direct pins.
 
 Optional ownership declarations in `library.json` replace their defaults with
 complete lists. A library retaining the seed of a future opening library uses:

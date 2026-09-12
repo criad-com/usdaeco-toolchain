@@ -78,7 +78,7 @@ from pxr import Plug, Tf
 from usdaeco_check import plugin_requires, registry_probe
 assert plugin_requires()
 apis = ["AecoProjectAPI", "AecoElementAPI", "AecoClassificationAPI", "AecoTypeAPI",
-        "AecoAxisAPI", "AecoDerivedGeometryAPI", "AecoTestAPI"]
+        "AecoDerivedGeometryAPI", "AecoTestAPI"]
 types = ["AecoSite", "AecoFacility", "AecoFacilityPart", "AecoLevel", "AecoSpace",
          "AecoSystem", "AecoZone", "AecoPort"]
 r = registry_probe(apis, types)

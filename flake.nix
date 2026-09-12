@@ -2,9 +2,9 @@
   description = "Shared build and check kit for usdAeco libraries and native plugins";
 
   inputs = {
-    aeco-toolchain.url = "github:criad-com/aeco-toolchain?ref=e190680d3f94eb76e06abe77574fda1308af2c85";
+    aeco-toolchain.url = "github:criad-com/aeco-toolchain?ref=v0.4.0";
     # Test-only compatibility input; recorded under dependencies.json.fixtures.
-    core.url = "github:criad-com/usdaeco-core?ref=v0.8.4";
+    core.url = "github:criad-com/usdaeco-core?ref=v0.9.2";
     core.flake = false;
     nixpkgs.follows = "aeco-toolchain/nixpkgs";
   };

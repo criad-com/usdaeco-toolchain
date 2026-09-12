@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "usdaeco-toolchain"
-version = "0.3.9"
+version = "0.3.10"
 description = "Shared build and validation kit for usdAeco libraries and native plugins"
 requires-python = ">=3.11"
 dependencies = ["packaging>=23", "jinja2>=3", "numpy>=1.24"]
@@ -36,7 +36,7 @@ usdaeco_check = ["licences/*.txt"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["tools"]
-markers = ["core: integration check requiring a built core checkout (compatibility probes use v0.8.4)"]
+markers = ["core: integration check requiring a built core checkout (fixture v0.9.2)"]
 
 [tool.setuptools.data-files]
 "share/usdaeco-toolchain/template" = ["template/.gitignore", "template/CHANGELOG.md", "template/LICENSE", "template/README.md", "template/build.sh", "template/check.py", "template/dependencies.json", "template/flake.nix", "template/library.json", "template/pyproject.toml", "template/reduced-flake.nix"]

@@ -3,16 +3,20 @@
     "aeco-toolchain": {
       "repo": "aeco-toolchain",
       "library": null,
-      "ref": "e190680d3f94eb76e06abe77574fda1308af2c85"
+      "ref": "v0.4.0",
+      "revision": "71c86d54aa1e4be180a301a089d9a40e727758cb",
+      "publicRevision": "afbea7ce2b012e55af54047311fad37339eb56df"
     }
   },
   "fixtures": {
     "core": {
       "repo": "usdaeco-core",
       "library": "usdAeco",
-      "ref": "v0.8.4",
+      "ref": "v0.9.2",
+      "revision": "11000b2ca7a2f560bfcd1ffd439bf9b71a5f5c18",
+      "publicRevision": "75282989be3fdecfa778465cb57a7f9530ce506e",
       "flakeInput": true,
-      "reason": "Legacy template build and runtime compatibility tests use the v0.8 schema and installed resource layout through USDAECO_CORE_DIR and CORE_PLUGIN_DIR; this is not a runtime dependency."
+      "reason": "Template build and runtime tests use the published clean-core v0.9.2 schema and built resources through USDAECO_CORE_DIR and CORE_PLUGIN_DIR; this is not a runtime dependency."
     }
   },
   "observed": {

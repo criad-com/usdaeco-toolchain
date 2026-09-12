@@ -171,6 +171,12 @@ def flake(c):
     urls = re.findall(r'\burl\s*=\s*"([^"]+)"', text)
     document = read_json(c.root / "dependencies.json")
     inputs = document["repos"] | fixture_inputs(document)
+    for name, pin in inputs.items():
+        repo = pin["repo"]
+        if repo.startswith(("usdaeco-", "usdAeco")) or repo in (
+                "aeco-toolchain", "usdSolid", "usdSolidOcct", "hdOcct"):
+            require(isinstance(pin.get("ref"), str) and bool(re.fullmatch("v" + VERSION, pin["ref"])),
+                    f"{name}: family flake inputs require a release tag (?ref=v<semver>) matching the pin; commit hashes are rejected")
     expected = [f"github:{PUBLIC_GITHUB_ORG}/{p['repo']}?ref={p['ref']}" for p in inputs.values()]
     require(sorted(urls) == sorted(expected), "flake URLs and exact dependency refs differ")
     require(bool(re.search(r'nixpkgs\.follows\s*=\s*"[^"]+"', text)), "nixpkgs.follows required")
