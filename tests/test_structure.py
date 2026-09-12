@@ -38,6 +38,46 @@ def test_s05_rejects_other_public_owners(tmp_path, owner):
     assert not result and result.detail == "flake URLs and exact dependency refs differ"
 
 
+@pytest.mark.parametrize("assignment", [
+    'version = "0.3.7";',
+    'version\n =\n "0.3.7";',
+    'version = "0.3.8"; nested = { version = "0.3.7"; };',
+])
+def test_s05_rejects_flake_version_mismatch(tmp_path, assignment):
+    repo = new_library("Example", tmp_path / "repo", kind="data")
+    path = repo / "library.json"
+    manifest = read_json(path)
+    manifest["version"] = "0.3.8"
+    path.write_text(json.dumps(manifest))
+    flake = repo / "flake.nix"
+    flake.write_text(flake.read_text().replace(
+        'version = (builtins.fromJSON (builtins.readFile ./library.json)).version;', assignment))
+    result, = check_structure(repo, only=["S05"])
+    assert not result
+    assert result.detail == "flake.nix version '0.3.7' differs from library.json version '0.3.8'"
+
+
+@pytest.mark.parametrize("assignment", [
+    'version = "0.3.8";',
+    'version = (builtins.fromJSON (builtins.readFile ./library.json)).version;',
+    'version = "${metadata.version}";',
+])
+def test_s05_accepts_matching_or_derived_flake_version(tmp_path, assignment):
+    repo = new_library("Example", tmp_path / "repo", kind="data")
+    path = repo / "library.json"
+    manifest = read_json(path)
+    manifest["version"] = "0.3.8"
+    path.write_text(json.dumps(manifest))
+    # The reduced starter must keep following the manifest after a release bump.
+    result, = check_structure(repo, only=["S05"])
+    assert result, result.detail
+    flake = repo / "flake.nix"
+    flake.write_text(flake.read_text().replace(
+        'version = (builtins.fromJSON (builtins.readFile ./library.json)).version;', assignment))
+    result, = check_structure(repo, only=["S05"])
+    assert result, result.detail
+
+
 def test_registry_maps_the_public_org_to_public_git_urls():
     entries = read_json(ROOT / "nix/registry.json")["flakes"]
     assert entries

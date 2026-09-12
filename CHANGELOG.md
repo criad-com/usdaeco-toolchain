@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.9 — 2026-09-12
+
+- Read the Nix Python package version from library.json in the toolchain and
+  reduced starter, preventing stale derivation versions at release time.
+- Extend S05 to reject literal flake versions that differ from library.json,
+  with regression coverage for mismatches, matching literals and derived values.
+
 ## 0.3.8 — 2026-09-12
 
 - public names → github.com/criad-com: update flakes, registry mappings,

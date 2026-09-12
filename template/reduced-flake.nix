@@ -14,7 +14,7 @@
       in {
         default = py.buildPythonPackage {
           pname = "usdaeco-example";
-          version = "0.1.0";
+          version = (builtins.fromJSON (builtins.readFile ./library.json)).version;
           src = self;
           pyproject = true;
           build-system = [ py.setuptools ];

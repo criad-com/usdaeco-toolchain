@@ -29,7 +29,7 @@
             '');
           kit = py.buildPythonPackage {
             pname = "usdaeco-toolchain";
-            version = "0.3.7";
+            version = (builtins.fromJSON (builtins.readFile ./library.json)).version;
             pyproject = true;
             src = self;
             build-system = [ py.setuptools ];

@@ -85,9 +85,8 @@ Full Nix reproduction remains unproven. Evaluation succeeded, but the native
 build probe stopped before compilation because prerequisites were uncached and
 builders/substitution were disabled for offline verification. Existing CMake
 smoke results do not establish successful Nix derivations. The companion hub's
-OCCT/IfcGeom acceptance and transitive static-archive check remain unproven;
-see [the reproduction blocker](../BLOCKED.md). Linux is declared but was not
-evaluated or run by this native-system check.
+OCCT/IfcGeom acceptance and transitive static-archive check remain unproven.
+Linux is declared but was not evaluated or run by this native-system check.
 
 The native template remains a separate scaffold from the codeless schema
 starter; S07/S12 are unchanged. Legacy runtime probes remain on core v0.8.4.

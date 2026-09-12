@@ -164,6 +164,10 @@ def dependency_pins(c):
 @rule(5)
 def flake(c):
     text = re.sub(r"(?m)^\s*#.*$", "", _text(c.root / "flake.nix"))
+    for version in re.findall(r'\bversion\s*=\s*"([^"]*)"\s*;', text):
+        if "${" not in version:
+            require(version == c.manifest.get("version"),
+                    f"flake.nix version {version!r} differs from library.json version {c.manifest.get('version')!r}")
     urls = re.findall(r'\burl\s*=\s*"([^"]+)"', text)
     document = read_json(c.root / "dependencies.json")
     inputs = document["repos"] | fixture_inputs(document)
