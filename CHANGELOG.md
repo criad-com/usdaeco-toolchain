@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.11 — 2026-09-13
+
+- Update repository references to usdaeco-repeat and remove private repository
+  names from public inventories, source cards, fixtures and publication checks.
+- Exclude private metadata entries from generated family indexes while retaining
+  publication refusal based on repository kind.
+- Align native verification instructions with the pinned core v0.9.2 fixture.
+
 ## 0.3.10 — 2026-09-12
 
 - Pin the build toolchain to published v0.4.0 and the core test fixture to

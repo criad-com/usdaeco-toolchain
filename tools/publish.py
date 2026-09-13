@@ -64,7 +64,7 @@ def prepare(source, tag, output, *, push=False, remote=None, patterns=()):
         tree = git("ls-tree", "-rz", "--full-tree", revision, cwd=clone).split(b"\0")
         metadata = json.loads(git("show", revision + ":library.json", cwd=clone))
         name = metadata.get("name", "")
-        if metadata.get("kind") == "meta" or name == "usdaeco-meta":
+        if metadata.get("kind") == "meta":
             raise ValueError("private metadata repositories cannot be published")
         if metadata.get("version") != tag[1:]:
             raise ValueError("tag and library.json version differ")

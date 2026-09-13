@@ -61,15 +61,17 @@ def test_untagged_and_private_rows_are_not_releases(sources):
     path, repos, root = sources
     data = json.loads(path.read_text())
     data["repos"][0]["tag"] = None
-    data["repos"].append(dict(data["repos"][0], name="usdaeco-meta", kind="meta", library=None))
+    private_name = "usdaeco-example-private"
+    data["repos"].append(dict(data["repos"][0], name=private_name, kind="meta", library=None))
     path.write_text(json.dumps(data))
-    private = repos / "usdaeco-meta"
+    private = repos / private_name
     private.mkdir()
     (private / "library.json").write_text("Invalid and must never be read")
-    result = render(collect(path, repos))
+    snapshot = collect(path, repos)
+    result = render(snapshot)
     assert "Unreleased in train (checkout 0.1.0)" in result
-    assert "Excluded from public publication" in result
-    assert "https://github.com/criad-com/usdaeco-meta" not in result
+    assert private_name not in json.dumps(snapshot)
+    assert private_name not in result
 
 
 def test_missing_source_and_mismatched_metadata(sources):

@@ -43,7 +43,7 @@ def test_family_kit_library_dependencies(family, defect):
 def test_released_family_validates(family):
     result = validate_family(family, sibling_root=os.environ.get("AECO_FAMILY_SIBLINGS") or None, inventory=True)
     assert result, result.detail
-    assert "1 unreleased seeds; 4 incompatible requirements" in result.detail
+    assert "0 unreleased seeds; 4 incompatible requirements" in result.detail
     print(result.detail)
 
 
@@ -76,7 +76,7 @@ def test_family_checks_sibling_manifest(family, tmp_path):
 
 def test_family_cli():
     result = run_python('from usdaeco_check.cli import main; raise SystemExit(main(["family", "tests/fixtures/family.json", "--inventory"]))', AECO_FAMILY_SIBLINGS="")
-    assert result.returncode == 0 and "16 repositories" in result.stdout, result.stdout + result.stderr
+    assert result.returncode == 0 and "15 repositories" in result.stdout, result.stdout + result.stderr
     assert "sibling comparison not requested" in result.stdout
 
 

@@ -162,15 +162,6 @@
       },
       "example": null,
       "enclave": null
-    },
-    {
-      "name": "usdaeco-meta",
-      "kind": "meta",
-      "library": null,
-      "tag": null,
-      "requires": {},
-      "example": null,
-      "enclave": null
     }
   ]
 }

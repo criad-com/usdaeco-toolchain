@@ -354,7 +354,7 @@
       "pushed": false
     },
     {
-      "repo": "usdaeco-typical",
+      "repo": "usdaeco-repeat",
       "tag": "v0.1.0",
       "ok": true,
       "files": 60,
@@ -761,12 +761,6 @@
       "reason": "ValueError: git show failed (exit 128)"
     },
     {
-      "repo": "usdaeco-meta",
-      "tag": null,
-      "status": "EXCLUDED",
-      "reason": "Private metadata repository"
-    },
-    {
       "repo": "usdaeco-plan",
       "tag": null,
       "status": "NOT RUN",
@@ -779,7 +773,7 @@
       "reason": "No tag in selected train"
     },
     {
-      "repo": "usdaeco-typical",
+      "repo": "usdaeco-repeat",
       "tag": null,
       "status": "NOT RUN",
       "reason": "No tag in selected train"

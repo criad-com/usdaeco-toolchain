@@ -129,7 +129,7 @@
       "detail": "0 asset paths use example inputs/, archived layers or documented resolver tokens"
     },
     {
-      "repo": "usdaeco-typical",
+      "repo": "usdaeco-repeat",
       "version": "0.1.1",
       "example": "examples/datacentre",
       "passed": true,

@@ -154,7 +154,7 @@ def inspect_tree(root, *, paths=None, patterns=(), max_file=MAX_FILE_BYTES, max_
         findings.append({"path": ".", "rule": "TreeSizeExceeded"})
     try:
         metadata = json.loads((root / "library.json").read_text())
-        if metadata.get("kind") == "meta" or metadata.get("name") == "usdaeco-meta":
+        if metadata.get("kind") == "meta":
             findings.append({"path": "library.json", "rule": "PrivateRepository"})
         licence_detail = check_licence(root, metadata, files)
     except (ValueError, OSError, TypeError):

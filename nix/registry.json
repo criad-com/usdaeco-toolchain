@@ -126,11 +126,11 @@
       "from": {
         "type": "github",
         "owner": "criad-com",
-        "repo": "usdaeco-typical"
+        "repo": "usdaeco-repeat"
       },
       "to": {
         "type": "git",
-        "url": "https://github.com/criad-com/usdaeco-typical.git"
+        "url": "https://github.com/criad-com/usdaeco-repeat.git"
       }
     },
     {

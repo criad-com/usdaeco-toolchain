@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "usdaeco-toolchain"
-version = "0.3.10"
+version = "0.3.11"
 description = "Shared build and validation kit for usdAeco libraries and native plugins"
 requires-python = ">=3.11"
 dependencies = ["packaging>=23", "jinja2>=3", "numpy>=1.24"]

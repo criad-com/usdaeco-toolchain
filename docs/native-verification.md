@@ -30,9 +30,9 @@ unchanged; ctests and relocated runtime probes were repeated after integration.
 ## Reproduce the gates
 
 Use the existing USD-enabled Python environment. Set USDAECO_CORE_DIR to the
-frozen core v0.8.4 compatibility checkout and CORE_PLUGIN_DIR to its built
+pinned core v0.9.2 checkout and CORE_PLUGIN_DIR to its built
 plugins/usdAeco/resources directory. Set PYTHONDONTWRITEBYTECODE=1 when using
-read-only dependencies. The shipped template still targets core v0.9.0;
+read-only dependencies. The shipped template targets core v0.9.2;
 compiler checks with substituted dependencies are not a runtime compatibility
 claim. The direct template lint above used current core v0.9.1 separately.
 
@@ -43,7 +43,7 @@ No package installation or dependency rebuild is required for source checks.
 
 For the offline gate leave AECO_NATIVE_SCHEMA, AECO_NATIVE_PLUGIN,
 AECO_NATIVE_PYTHON and AECO_USD_PYTHON unset. AECO_HUB_CHECKOUT selects the hub
-revision in dependencies.json; AECO_CORE_CHECKOUT selects frozen core v0.8.4.
+revision in dependencies.json; AECO_CORE_CHECKOUT selects pinned core v0.9.2.
 OPENUSD_OVERRIDE is the Git URL from the hub's local registry, prefixed with
 `git+`. Use [the registry override instructions](native.md#local-input-overrides)
 without committing deployment addresses or local lockfiles.
@@ -89,6 +89,6 @@ OCCT/IfcGeom acceptance and transitive static-archive check remain unproven.
 Linux is declared but was not evaluated or run by this native-system check.
 
 The native template remains a separate scaffold from the codeless schema
-starter; S07/S12 are unchanged. Legacy runtime probes remain on core v0.8.4.
-The retained inventory reports one unreleased seed and four incompatible core
+starter; S07/S12 are unchanged. Runtime probes use pinned core v0.9.2.
+The retained inventory reports four incompatible core
 requirements; it does not establish a compatible release train.

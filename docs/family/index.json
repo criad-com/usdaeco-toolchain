@@ -172,15 +172,6 @@
         "enclave": null
       },
       {
-        "name": "usdaeco-meta",
-        "kind": "meta",
-        "library": null,
-        "tag": null,
-        "requires": {},
-        "example": null,
-        "enclave": null
-      },
-      {
         "name": "usdaeco-plan",
         "kind": "usecase",
         "library": "usdAecoPlan",
@@ -203,7 +194,7 @@
         "enclave": null
       },
       {
-        "name": "usdaeco-typical",
+        "name": "usdaeco-repeat",
         "kind": "usecase",
         "library": "usdAecoTypical",
         "tag": null,
@@ -593,10 +584,6 @@
       "reason": "Tagged library manifest missing"
     },
     {
-      "name": "usdaeco-meta",
-      "private": true
-    },
-    {
       "name": "usdaeco-plan",
       "available": true,
       "commit": null,
@@ -669,7 +656,7 @@
       }
     },
     {
-      "name": "usdaeco-typical",
+      "name": "usdaeco-repeat",
       "available": true,
       "commit": null,
       "library": {

@@ -46,7 +46,7 @@ still names older releases. This table does not claim a compatible release train
 | usdaeco-board | v0.1.2 | 34 | 180,030 | MIT | PASS |
 | usdaeco-plan | v0.1.0 | 101 | 7,137,738 | MIT | PASS |
 | usdaeco-compliance | v0.1.0 | 61 | 4,095,037 | MIT | PASS |
-| usdaeco-typical | v0.1.0 | 60 | 1,024,546 | MIT | PASS |
+| usdaeco-repeat | v0.1.0 | 60 | 1,024,546 | MIT | PASS |
 | usdaeco-clash | v0.2.0 | 68 | 3,411,026 | MIT | PASS |
 | usdaeco-solid | v0.1.0 | 54 | 7,574,059 | MIT | PASS |
 

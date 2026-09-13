@@ -37,12 +37,10 @@ def collect(family_path, repos):
     validated = validate_family(family, inventory=True)
     if not validated:
         raise ValueError(validated.detail)
+    family["repos"] = [entry for entry in family["repos"] if entry["kind"] != "meta"]
     cards = []
     for entry in family["repos"]:
         name, tag = entry["name"], entry["tag"]
-        if entry["kind"] == "meta" or name == "usdaeco-meta":
-            cards.append({"name": name, "private": True})
-            continue
         root = Path(repos) / name
         source = {}
         revision = None
@@ -108,7 +106,7 @@ def render(snapshot):
         name, tag = entry["name"], entry["tag"]
         card = cards[name]
         if card.get("private"):
-            values = [name, "Private coordination records", "meta", "Private", "—", "Not exported", "Excluded from public publication"]
+            continue
         elif not card.get("available"):
             values = [name, plain(card["purpose"]), entry["kind"], tag or "Unreleased in train", "—", "Not verified", "NOT RUN: " + card["reason"]]
         else:
